@@ -3,34 +3,52 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Taupō 70.3 sub-5 roadmap</title>
 <style>
-:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f5f6f8;--cd:#fff;--tx:#15191f;--mu:#667085;--ln:#e2e5ea;--ac:#0b7a75}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1216;--cd:#161b21;--tx:#e8ebef;--mu:#98a2b3;--ln:#2a313a;--ac:#2dd4bf}}
-:root[data-theme="dark"]{--bg:#0e1216;--cd:#161b21;--tx:#e8ebef;--mu:#98a2b3;--ln:#2a313a;--ac:#2dd4bf}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);--bg:#f4f5f7;--cd:#fff;--tx:#12161c;--mu:#6b7280;--ln:#e5e7eb;--ac:#0d9488;--ac2:#ccfbf1}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0f14;--cd:#151b22;--tx:#e9edf1;--mu:#94a3b8;--ln:#26303b;--ac:#2dd4bf;--ac2:#10322f}}
+:root[data-theme="dark"]{--bg:#0b0f14;--cd:#151b22;--tx:#e9edf1;--mu:#94a3b8;--ln:#26303b;--ac:#2dd4bf;--ac2:#10322f}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:880px;margin:0 auto;padding:12px}h1{font-size:19px;margin:4px 0}
-.mu{color:var(--mu);font-size:13px}
-nav{display:flex;gap:6px;overflow-x:auto;padding:6px 0;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:2}
-button,select,input{font:inherit;color:var(--tx);background:var(--cd);border:1px solid var(--ln);border-radius:8px;padding:6px 10px}
-nav button{white-space:nowrap}nav button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
-input[type=checkbox]{width:18px;height:18px;flex:none}
-.cd{background:var(--cd);border:1px solid var(--ln);border-radius:10px;padding:10px;margin:8px 0}
-.s{border-left:4px solid var(--c);padding:6px 8px;margin:6px 0;background:var(--bg);border-radius:6px}
-.s summary{cursor:pointer;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.d{margin:6px 0 2px}
-.bar{height:6px;background:var(--ln);border-radius:4px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ac)}
-table{width:100%;border-collapse:collapse;font-size:13px}td,th{padding:5px 6px;border-bottom:1px solid var(--ln);text-align:left;vertical-align:top}
-.tb{overflow-x:auto}.tag{font-size:11px;padding:1px 6px;border-radius:9px;background:var(--ln)}
-</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><meta name="theme-color" content="#0b7a75"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="70.3 plan"></head><body><main>
-<h1>🏊 🚴 🏃 Taupō 70.3 · sub-5 roadmap</h1><div class="mu"><span id="hd"></span> · <b id="sv">Loading…</b></div><nav id="nv"></nav><div id="v"></div>
-</main><script>
-const S0=new Date(2026,9,12),N=73,RACE=new Date(2028,2,4),D7=7*864e5,$=s=>document.querySelector(s),r5=x=>Math.round(x/5)*5,L=(a,b,t)=>a+(b-a)*t;
-const dd=(w,i=0)=>new Date(2026,9,12+7*w+i),pd=s=>new Date(s+'T00:00:00');
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;-webkit-font-smoothing:antialiased}
+main{max-width:680px;margin:0 auto;padding:18px 16px 112px}
+header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:8px}
+.t1{font-size:27px;font-weight:700;letter-spacing:-.02em;line-height:1.15}.t2,.mu{color:var(--mu);font-size:13px}
+h2{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--mu);margin:24px 4px 8px;font-weight:600}
+.card{background:var(--cd);border-radius:18px;padding:16px;margin:10px 0;box-shadow:0 1px 3px rgba(0,0,0,.07)}
+.cd{margin:8px 0}
+.coach{border:1px solid var(--ac2)}.coach b.h{font-size:18px;display:block;margin-bottom:4px}.coach p{margin:7px 0}
+.s{background:var(--cd);border-radius:16px;margin:8px 0;box-shadow:0 1px 3px rgba(0,0,0,.07);border-left:4px solid var(--c);overflow:hidden}
+.s>summary{list-style:none;display:flex;gap:12px;align-items:center;padding:12px 14px;cursor:pointer}
+.s>summary::-webkit-details-marker{display:none}
+.ti{display:flex;flex-direction:column;min-width:0}
+input[type=checkbox]{appearance:none;-webkit-appearance:none;width:26px;height:26px;border-radius:50%;border:2px solid var(--ln);flex:none;margin:0;cursor:pointer;display:grid;place-content:center;background:var(--cd);padding:0}
+input[type=checkbox]:checked{background:var(--ac);border-color:var(--ac)}
+input[type=checkbox]:checked::after{content:"✓";color:#fff;font-size:15px;font-weight:700;line-height:1}
+.d{padding:0 14px 8px;font-size:14px}
+.s>div,.s>details{padding-left:14px;padding-right:14px}.s details>summary{list-style:none;cursor:pointer;color:var(--mu);font-size:13px;padding:4px 0}
+.s>details{padding-bottom:10px}
+button,select,input,textarea{font:inherit;color:var(--tx);background:var(--bg);border:1px solid var(--ln);border-radius:12px;padding:9px 12px;max-width:100%}
+button{cursor:pointer}.btn{background:var(--ac);color:var(--bg);border-color:var(--ac);font-weight:600}
+a{color:var(--ac)}
+.ic{width:40px;height:40px;padding:0;font-size:22px;border-radius:50%;line-height:1}
+.wn{display:flex;align-items:center;justify-content:space-between;margin:8px 0}
+.day h3{margin:20px 4px 6px;font-size:15px}.day.today h3{color:var(--ac)}.add{margin:4px 4px 0}.add>summary{cursor:pointer;list-style:none;color:var(--mu);font-size:13px}
+.bar{height:8px;background:var(--ln);border-radius:6px;overflow:hidden;margin-top:10px}.bar i{display:block;height:100%;background:var(--ac);border-radius:6px}
+.pill{font-size:11px;padding:2px 8px;border-radius:99px;background:var(--ac2);color:var(--ac);margin-left:6px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:5px 0}
+.tl{position:relative;display:flex;height:12px;border-radius:8px;margin:14px 0 6px}.tl div:first-child{border-radius:8px 0 0 8px}.tl div:nth-last-child(2){border-radius:0 8px 8px 0}.tl i{position:absolute;top:-3px;width:4px;height:18px;background:var(--tx);border-radius:2px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.fld{display:flex;flex-direction:column;gap:4px}.fld input{width:100%}
+details.card>summary{font-weight:600;cursor:pointer;list-style:none}details.card>summary::after{content:"›";float:right;color:var(--mu)}
+textarea{width:100%}
+nav{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:center;gap:4px;padding:8px 10px calc(8px + env(safe-area-inset-bottom,0px));background:var(--cd);border-top:1px solid var(--ln);z-index:5}
+nav button{flex:1;max-width:150px;border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:1px;font-size:11px;color:var(--mu);padding:6px 4px;border-radius:12px}nav button span{font-size:20px}nav button.on{color:var(--ac);background:var(--ac2)}
+</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><meta name="theme-color" content="#0d9488"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="70.3 plan"></head><body><main><header><div><div class="t1" id="t1"></div><div class="t2" id="t2"></div></div><span class="mu" id="sv">Loading…</span></header><div id="v"></div></main><nav id="nv"></nav><script>
+const S0=new Date(2026,10,16),N=68,RACE=new Date(2028,2,4),D7=7*864e5,$=s=>document.querySelector(s),r5=x=>Math.round(x/5)*5,L=(a,b,t)=>a+(b-a)*t;
+const dd=(w,i=0)=>new Date(2026,10,16+7*w+i),pd=s=>new Date(s+'T00:00:00');
 const iso=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
 const fd=d=>d.toLocaleDateString('en-NZ',{day:'numeric',month:'short'}),fy=d=>d.toLocaleDateString('en-NZ',{day:'numeric',month:'short',year:'numeric'});
 const pc=s=>Math.floor(s/60)+':'+String(Math.round(s%60)).padStart(2,'0'),hm=m=>Math.floor(m/60)+'h'+String(m%60).padStart(2,'0');
-const C={swim:'#2563eb',bike:'#d97706',run:'#dc2626',gym:'#7c3aed',race:'#16a34a'},tw=w=>Math.max(70,86-.25*w);
-const DEF=()=>({done:{},wt:[],z:{rl:172,bl:165,css:125},ov:{},nt:{},ad:{},rd:{},ac:{},u:0}),mg=o=>{const x=JSON.parse(JSON.stringify(o));return{...DEF(),...x,z:{...DEF().z,...(x.z||{})}}};
+const C={swim:'#2563eb',bike:'#d97706',run:'#dc2626',gym:'#7c3aed',race:'#16a34a'};
+const DEF=()=>({done:{},wt:[],z:{rl:172,bl:165,css:125},ov:{},nt:{},ad:{},rd:{},ac:{},u:0}),mg=o=>{const x=JSON.parse(JSON.stringify(o)),r={...DEF(),...x,z:{...DEF().z,...(x.z||{})}};if(x.v!==9&&Object.keys(x).length){r.done={};r.nt={};r.ac={};r.ov={};r.ad={}}r.v=9;return r};
 let ST=DEF(),DBR=null,SVT=null,SVP=false,dirty=false,OPEN='';
 try{ST=mg(JSON.parse(localStorage.getItem('t70')||'{}'))}catch(e){}
 const sst=t=>{const e=$('#sv');if(e)e.textContent=t};
@@ -41,11 +59,11 @@ const ZN=[[0,.8],[.81,.89],[.9,.93],[.94,.99],[1,1.06]];
 const zr=(z,sp)=>{const l=sp=='run'?ST.z.rl:ST.z.bl,[a,b]=ZN[z-1];return z==1?'<'+Math.round(l*b):Math.round(l*a)+'–'+Math.round(l*b)};
 const ex=(t,sp)=>{if(sp=='gym')return t;if(sp=='swim')return t.replace(/CSS/g,'CSS ('+pc(ST.z.css)+')');const l=sp=='run'?ST.z.rl:ST.z.bl;return t.replace(/Z([1-5])/g,(m,z)=>'Z'+z+' ('+zr(+z,sp)+')').replace(/(\d+)% LTHR/g,(m,p)=>m+' ('+Math.round(l*p/100)+' bpm)').replace(/(\d+)(?:–(\d+))?% FTP/g,(m,a,b)=>ST.z.ftp?m+' ('+Math.round(ST.z.ftp*a/100)+(b?'–'+Math.round(ST.z.ftp*b/100):'')+' W)':m)};
 const PH=[
-{n:'Foundation',a:0,b:11,c:'#64748b',f:'Aerobic base, weight loss, strength-endurance, strides/hills. No pool until Mon 4 Jan 2027 — book adult swim lessons for the first block.',LR:[120,165],LU:[60,90],RK:[50,60],B2:[75,105],S:[0,0],BR:[0,0]},
-{n:'Base (swim build)',a:12,b:27,c:'#2563eb',f:'Swim technique + CSS, sub-threshold work begins, max-strength gym, first sprint races.',LR:[135,180],LU:[70,95],RK:[55,65],B2:[90,120],S:[40,50],BR:[10,15]},
-{n:'Build 1 (winter run block)',a:28,b:43,c:'#dc2626',f:'Run economy + controlled threshold, duathlon and half-marathon benchmarks, first Olympic.',LR:[165,210],LU:[90,115],RK:[65,75],B2:[105,135],S:[50,55],BR:[15,20]},
-{n:'Build 2 (bike + open water)',a:44,b:59,c:'#d97706',f:'Sweet-spot bike, long rides, wetsuit + open water, Olympic race, gym to maintenance.',LR:[180,225],LU:[95,110],RK:[65,75],B2:[105,120],S:[50,55],BR:[20,30]},
-{n:'Specific 70.3 + taper',a:60,b:72,c:'#16a34a',f:'Race-pace bricks, nutrition rehearsal, 70.3-distance dress rehearsal, 3-week taper.',LR:[220,240],LU:[100,105],RK:[70,75],B2:[105,120],S:[60,60],BR:[30,40]}];
+{n:'Foundation',a:0,b:6,c:'#64748b',f:'Aerobic base, weight loss, strength-endurance, strides/hills. No pool until Mon 4 Jan 2027 — book adult swim lessons for the first block.',LR:[120,165],LU:[60,90],RK:[50,60],B2:[75,105],S:[0,0],BR:[0,0]},
+{n:'Base (swim build)',a:7,b:22,c:'#2563eb',f:'Swim technique + CSS, sub-threshold work begins, max-strength gym, first sprint races.',LR:[135,180],LU:[70,95],RK:[55,65],B2:[90,120],S:[40,50],BR:[10,15]},
+{n:'Build 1 (winter run block)',a:23,b:38,c:'#dc2626',f:'Run economy + controlled threshold, duathlon and half-marathon benchmarks, first Olympic.',LR:[165,210],LU:[90,115],RK:[65,75],B2:[105,135],S:[50,55],BR:[15,20]},
+{n:'Build 2 (bike + open water)',a:39,b:54,c:'#d97706',f:'Sweet-spot bike, long rides, wetsuit + open water, Olympic race, gym to maintenance.',LR:[180,225],LU:[95,110],RK:[65,75],B2:[105,120],S:[50,55],BR:[20,30]},
+{n:'Specific 70.3 + taper',a:55,b:67,c:'#16a34a',f:'Race-pace bricks, nutrition rehearsal, 70.3-distance dress rehearsal, 3-week taper.',LR:[220,240],LU:[100,105],RK:[70,75],B2:[105,120],S:[60,60],BR:[30,40]}];
 const RC=[
 ['2027-02-03','NHTC Swim-Run series, Takapuna (alternate Wed evenings Jan–Mar; 2026 dates were 21 Jan, 4 & 18 Feb, 4 Mar)','Swim-run','O','Open-water practice; confirm 2027 dates with NHTC'],
 ['2027-03-14','Mount Maunganui multi-distance triathlon','Sprint','C','Listed for 14 Mar 2027 (Sprint / Monster-Short / Mini)'],
@@ -57,13 +75,13 @@ const RC=[
 ['2028-01-22','Mount Festival long course (2 km / 90 km / 21.1 km)','70.3-distance','B','Projected from the Jan 2027 listing. Dress rehearsal 6 weeks out'],
 ['2028-03-04','IRONMAN 70.3 New Zealand, Taupō','70.3','A','6 Mar 2027 is confirmed; 2028 projected from the first-Saturday pattern. Verify on ironman.com']];
 const RCe=()=>RC.map((r,i)=>ST.rd[i]?[ST.rd[i],...r.slice(1)]:r);
-const RT={Sprint:'Train through, no taper. Rehearse wetsuit/open-water start, T1/T2 and kit. Race at RPE 8; swim controlled for the first 100 m. Write down 3 lessons afterwards.',Olympic:'Mini-taper (Thu openers). Controlled first third, then RPE 7–8. Fuel 60–80 g carb/h on the bike. Use your exact 70.3 kit and transition routine.','Du sprint':'Run-bike-run: run 1 at 10 km effort, bike hard on the flat, run 2 by feel. Fitness check for the winter block.',HM:'Benchmark: even splits, first 5 km slightly slower than goal. The result sets your run paces and is a decision gate for sub-5 (see Goals).','70.3-distance':'Dress rehearsal, 6 weeks out. Mini-taper (Thu openers, Fri easy). Bike at intended 70.3 effort (HR ≤ 88% LTHR), exact race nutrition (80–90 g carb/h), run by feel. Test everything you will use at Taupō.'};
+const RT={Sprint:'Train through, no taper. Rehearse wetsuit/open-water start, T1/T2 and kit. Race at RPE 8; swim controlled for the first 100 m. Write down 3 lessons afterwards.',Olympic:'Mini-taper (Thu openers). Controlled first third, then RPE 7–8. Fuel 60–80 g carb/h on the bike. Use your exact 70.3 kit and transition routine.','Du sprint':'Run-bike-run: run 1 at 10 km effort, bike hard on the flat, run 2 by feel. Fitness check for the winter block.',HM:'Benchmark: even splits, first 5 km slightly slower than goal. The result sets your run paces and is a decision gate for sub-5 (see Progress).','70.3-distance':'Dress rehearsal, 6 weeks out. Mini-taper (Thu openers, Fri easy). Bike at intended 70.3 effort (HR ≤ 88% LTHR), exact race nutrition (80–90 g carb/h), run by feel. Test everything you will use at Taupō.'};
 const RD='Swim: steady at CSS+4s, sight every 8 strokes, T1 ≤ 3:30. Bike: first 20 min HR ≤ 85% LTHR, then settle at 85–88% LTHR (RPE 6), 80–90 g carb/h and 500–750 ml fluid/h, spin easy for the last 5 min. Run: first 5 km about 4:40/km (it will feel too easy), then 4:30/km if HR stays controlled; walk aid stations if needed. Plan A = 36:00 / 3:30 / 2:40 / 2:30 / 1:35 = 4:57.';
 const GA=['Goblet squat 3×12 · DB Romanian deadlift 3×12 · Split squat 3×10/leg · Hip thrust 3×12 · Calf raise 3×15 · Plank 3×40 s','Back squat 4×5 · Trap-bar or Romanian deadlift 3×5 · Bulgarian split squat 3×6/leg · Hip thrust 3×8 · Heavy calf raise 3×10 · Copenhagen plank 2×20 s/side','Back squat 3×4 @RPE 7–8 · Box jump 3×5 · Heavy step-ups 3×6/leg · Romanian deadlift 3×6 · Calf raise 3×8 · Side plank 2×30 s','Squat 2×4 @RPE 7 · Romanian deadlift 2×5 · Step-ups 2×6 · 10 min mobility (hips, calves, T-spine)'];
 const GB=['Lat pulldown 3×10 · One-arm DB row 3×10 · Push-up 3×10 · Step-up 3×10/leg · Face pull 3×15 · Pallof press 3×10/side · Swim prep: band pull-down 3×15 + scapular push-up 2×10','Pull-up (assisted/weighted) 4×6 · Incline press 3×6 · Seated row 3×8 · Single-leg RDL 3×8/leg · Straight-arm pulldown 3×12 · Dead bug 3×10/side','Pull-up 3×6 · Overhead press 3×6 · Row 3×8 · Single-leg RDL 3×6/leg · Band swim pulls 3×20'];
 function swm(w,pi,k,m,test){if(k==3)return 'WU 200 easy · drills 6×50 (catch-up, fingertip drag, 6-3-6, sighting every 6 strokes) · Main: 6×100 easy-steady /20s, long relaxed strokes · CD 100 · ≈'+Math.round(m*34/50)*50+' m';
- if(test)return 'WU 400 easy + 4×50 drill. 400 m time trial (all-out but even), 5 min easy, then 200 m time trial. CSS = (T400 − T200) ÷ 2 per 100 m. Enter it in Zones.';
- const a=pi==1?(w<20?0:1):pi,M=[
+ if(test)return 'WU 400 easy + 4×50 drill. 400 m time trial (all-out but even), 5 min easy, then 200 m time trial. CSS = (T400 − T200) ÷ 2 per 100 m. Enter it in Settings.';
+ const a=pi==1?(w<15?0:1):pi,M=[
  ['6×100 @ CSS+6s /20s · 4×50 pull · 4×50 kick. Focus: high-elbow catch, long streamline off every wall.','5×150 steady (RPE 5) /20s · 8×25 fast-form /15s · bilateral breathing 3-5-3.'],
  ['10×100 @ CSS+3s /15s · 4×50 pull.','3×300 pull-buoy steady /30s · 4×50 build /15s.'],
  ['5×200 @ CSS+2s /20s · 4×50 fast /30s.','800–1,000 m continuous (RPE 5), then 6×100 @ CSS /15s.'],
@@ -71,13 +89,13 @@ function swm(w,pi,k,m,test){if(k==3)return 'WU 200 easy · drills 6×50 (catch-u
  ['400 easy + 1,500 m continuous at CSS+4s (race rehearsal).','10×100 @ CSS /10s · 400 pull steady; practise sighting and drafting (open water if possible).']];
  return 'WU 200 easy + 4×50 drill (catch-up, fingertip drag, 6-3-6) · Main: '+M[a][k-1]+' · CD 100 · ≈'+Math.round(m*34/50)*50+' m'}
 function plan(w){
- const pi=PH.findIndex(x=>w>=x.a&&w<=x.b),P=PH[pi],t=(w-P.a)/(P.b-P.a),tp=w>=70,rec=!tp&&w%4==3,f=tp?[.8,.6,.4][w-70]:rec?.7:1,
+ const pi=PH.findIndex(x=>w>=x.a&&w<=x.b),P=PH[pi],t=(w-P.a)/(P.b-P.a),tp=w>=65,rec=!tp&&w%4==3,f=tp?[.8,.6,.4][w-65]:rec?.7:1,
  g=k=>r5(L(P[k][0],P[k][1],t)*f),n=(a,b)=>Math.max(1,Math.round(L(a,b,t))-(rec?1:0)),
  rc=RCe().find(r=>r[3]!='O'&&r[0]>=iso(dd(w))&&r[0]<=iso(dd(w,6))),
- T=rc||w>=70?{}:{css:w>=13&&(w-13)%8==0,r5:w>=11&&(w-11)%12==0,bk:w==3||(w>=15&&(w-15)%12==0)},sw=w>=12,
+ T=rc||w>=65?{}:{css:w>=8&&(w-8)%8==0,r5:w>=7&&(w-7)%12==0,bk:w==3||(w>=15&&(w-15)%12==0)},sw=w>=7,
  RK=g('RK'),B2=g('B2'),LR=g('LR'),LU=g('LU'),BR=g('BR'),SS=g('S'),
  s=(k,ti,m,c,d,at)=>({k,t:ti,m,c,d,at}),days=[[],[],[],[],[],[],[]];
- if(w==72){
+ if(w==67){
   days[0]=[s('bike','Easy commute (optional)',180,false,'Z1 only, or take transit: fresh legs matter more than commute mileage this week.','Leave ≤4:45am')];
   days[1]=[s('bike','Easy commute (optional)',180,false,'Z1 only.','Leave ≤4:45am'),s('bike','Indoor openers (KICKR)',40,true,'10 min easy, 3×2 min at 80–85% FTP / 3 min easy, 5 min easy. Fan on.','Evening, at home')];
   days[2]=[s('run','Shakeout run',30,true,'Z2 with 4×20 s strides.'),s('swim','Short swim',25,true,'WU 200 · 4×50 drill · 4×100 @ CSS+4s /20s · 100 easy.','After work (pool)')];
@@ -87,7 +105,7 @@ function plan(w){
   days[6]=[s('run','Celebrate + easy walk',30,true,'Eat, sleep, review your race notes.')];
  }else{
   days[0].push(s('bike','Easy commute (optional)',180,false,'Both legs Z1–Z2, cadence 85–95. Ride slower than feels natural: base + recovery. If sleep is under 6.5 h or resting HR is +7 bpm, take transit instead.','Leave ≤4:45am'));
-  if(w<71)days[0].push(s('gym','Gym A: lower body + core',rec||tp?35:45,true,GA[[0,1,1,2,3][pi]]+(tp?'. Light: 2 sets, RPE 6.':rec?'. Recovery week: 1 set fewer per lift.':'. Add 2.5 kg only if every rep is ≤ RPE 8.'),'Evening'));
+  if(w<66)days[0].push(s('gym','Gym A: lower body + core',rec||tp?35:45,true,GA[[0,1,1,2,3][pi]]+(tp?'. Light: 2 sets, RPE 6.':rec?'. Recovery week: 1 set fewer per lift.':'. Add 2.5 kg only if every rep is ≤ RPE 8.'),'Evening'));
   const TU=r5(L([45,55,60,60,60][pi],[55,70,80,65,60][pi],t)*f),q=tp?'10 min easy, 3×3 min at 80–85% FTP / 3 min easy, 5 min easy.':[
    `10 min easy, ${n(3,4)}×8 min tempo at 76–87% FTP (Z3 until you know your FTP) / 3 min easy at 100 rpm, 5 min cool-down.`,
    `10 min easy, ${n(3,4)}×10 min sweet spot at 88–94% FTP (RPE 7) / 4 min easy, 5 min cool-down.`,
@@ -97,14 +115,14 @@ function plan(w){
   days[1].push(s('bike','Easy commute (optional)',180,false,'Both legs Z1–Z2, cadence 85–95. Easy only: no efforts on the road. Take transit if sleep is under 6.5 h or resting HR is +7 bpm.','Leave ≤4:45am'));
   days[1].push(s('bike','Indoor bike: quality (KICKR)',TU,true,q+' Fan on, drink 500 ml/h. ERG mode, or hold the power by hand.','Evening, at home'));
   const nR=n(3,5),rk=T.r5?'WU 15 min Z2 + 4 strides. 5 km time trial on a flat measured route, as even as possible (log time + average HR). CD 10 min. Record it under Goals.':tp?`Z2 for ${RK} min with 4×1 min at goal race pace (relaxed). Stay fresh.`:[
-   w>=8?`10 min Z1, Z2 to ${RK} min total, then 6×45 s hill reps (hard, smooth, jog down). Lorang order: speed/technique first, strength next, economy last.`:`Z2 for ${RK} min, then 6×20 s relaxed strides with full recovery. Conversational pace; walk breaks are fine.`,
+   w>=3?`10 min Z1, Z2 to ${RK} min total, then 6×45 s hill reps (hard, smooth, jog down). Lorang order: speed/technique first, strength next, economy last.`:`Z2 for ${RK} min, then 6×20 s relaxed strides with full recovery. Conversational pace; walk breaks are fine.`,
    `10 min Z2, ${nR}×6 min Z3–Z4 (RPE 6–7, short sentences only) / 2 min jog, 10 min CD. Norwegian-style sub-threshold: controlled, finish able to do 2 more reps.`,
    `10 min Z2, ${nR}×8 min low Z4 / 2 min jog, 10 min CD, then 6×30 s hill strides (Plews: short HIT builds power cheaply).`,
    `10 min Z2, ${n(2,3)}×12 min at half-marathon effort (Z3–Z4) / 3 min jog, 10 min CD.`,
    w%2?'10 min Z2, 6×(800 m just above threshold Z4–Z5, then 300 m at goal 70.3 pace), 10 min CD. Plews race-pace session.':'10 min Z2, 3×10 min at goal 70.3 run pace (≈4:30–4:40/km) / 3 min jog, 10 min CD.'][pi];
   days[2].push(s('run',T.r5?'5 km time trial':'Run key session',RK,true,rk));
   if(sw)days[2].push(s('swim',T.css?'CSS swim test':'Swim 1: technique + CSS',SS,true,swm(w,pi,1,SS,T.css),'After work (pool)'));
-  const IB=Math.min(B2,120),nB=n(6,8),bk=T.bk?'WU 20 min easy with 3×1 min fast pedalling, 5 min easy, then 20 min as hard as you can hold steadily (even power, no sprint start). FTP = 95% of the 20-min average power. Enter it in the Zones tab. Your average HR over the last 15 min is your bike LTHR. CD 10 min.':tp?'Indoor openers: 10 min easy, 3×1 min at 85% FTP / 2 min easy. Fresh legs.':[
+  const IB=Math.min(B2,120),nB=n(6,8),bk=T.bk?'WU 20 min easy with 3×1 min fast pedalling, 5 min easy, then 20 min as hard as you can hold steadily (even power, no sprint start). FTP = 95% of the 20-min average power. Enter it in Settings. Your average HR over the last 15 min is your bike LTHR. CD 10 min.':tp?'Indoor openers: 10 min easy, 3×1 min at 85% FTP / 2 min easy. Fresh legs.':[
    `Z2 steady for ${IB} min at 56–75% FTP, 5×2 min at 100+ rpm, last 10 min at 76–87% FTP.`,
    `10 min easy, ${nB}×3 min at 60–70 rpm seated at 85–95% FTP / 4 min easy (Watson strength-endurance), then Z2 at 56–75% FTP to ${IB} min.`,
    `10 min easy, ${n(3,4)}×10 min sub-threshold at 90–95% FTP (RPE 7) / 3 min easy, then Z2 at 56–75% FTP to ${IB} min.`,
@@ -142,7 +160,7 @@ function plan(w){
 const PL=[],pl=w=>PL[w]||(PL[w]=plan(w));
 const stt=(i,tot)=>{let m=i>4?480-(tot+30):390-(tot+25);m=Math.max(180,Math.floor(m/15)*15);return 'Latest start '+Math.floor(m/60)+':'+String(m%60).padStart(2,'0')+'am'};
 const prog=w=>{let a=0,b=0;pl(w).days.forEach((ss,i)=>ss.forEach((x,j)=>{if(x.c){b+=x.m;if(ST.done[w+'-'+i+'-'+j])a+=x.m}}));return b?Math.round(100*a/b):0};
-function tg(k,el){ST.done[k]=el.checked?1:0;sv();const b=$('#pb');if(b)b.style.width=prog(cw)+'%';const f=$('#fbl');if(f)f.innerHTML=fbHtml(cw);const t=$('#cp');if(t)t.value=cpText(cw)}
+function tg(k,el){ST.done[k]=el.checked?1:0;sv();const b=$('#pb');if(b)b.style.width=prog(cw)+'%';const f=$('#cc');if(f)f.innerHTML=coachIn(curW());const t=$('#cp');if(t)t.value=cpText(curW())}
 const E=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
 const ed=(k,f,v)=>{OPEN=k;(ST.ov[k]=ST.ov[k]||{})[f]=f=='m'?Math.max(0,+v||0):v;PL.length=0;sv();draw()};
 const rs=k=>{OPEN=k;delete ST.ov[k];PL.length=0;sv();draw()};
@@ -191,77 +209,69 @@ document.addEventListener('visibilitychange',()=>{if(!document.hidden)auto()});
 const FC={ok:'#16a34a',warn:'#d97706',bad:'#dc2626',info:'#667085'},DN=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
 function fbDay(w,i){const out=[],a=ST.ac[iso(dd(w,i))];if(!a)return out;const used={};
  pl(w).days[i].forEach(s=>{if(s.del)return;let b=-1,bd=1e9;a.forEach((x,q)=>{if(used[q]||x.k!=s.k)return;const df=Math.abs(x.m-s.m);if(df<bd){bd=df;b=q}});if(b<0)return;used[b]=1;const x=a[b],cm=/commute/i.test(s.t),ez=/Easy commute|Long ride|Long run|Recovery|Shakeout/.test(s.t);
-  if(ez&&x.h&&(x.k=='run'||x.k=='bike')){const lt=x.k=='run'?ST.z.rl:ST.z.bl,cap=Math.round(lt*(/Long/.test(s.t)?.92:.89));out.push(x.h>cap?['bad',s.t+': average '+x.h+' bpm, easy limit '+cap+'. Slow down next time.']:['ok',s.t+': stayed easy (average '+x.h+', limit '+cap+').'])}
-  if(!cm&&s.m>0){if(x.m<s.m*.7)out.push(['warn',s.t+': '+x.m+' of '+s.m+' min. Short. Fine if planned, otherwise add time next time.']);else if(ez&&x.m>s.m*1.3)out.push(['warn',s.t+': '+x.m+' min vs '+s.m+' planned. Easy sessions should not grow.'])}});
+  if(ez&&x.h&&(x.k=='run'||x.k=='bike')){const lt=x.k=='run'?ST.z.rl:ST.z.bl,cap=Math.round(lt*(/Long/.test(s.t)?.92:.89));out.push(x.h>cap?['bad',s.t+' averaged '+x.h+' bpm against an easy limit of '+cap+'. That is not easy. Slow down.']:['ok',s.t+' stayed easy ('+x.h+' vs limit '+cap+').'])}
+  if(!cm&&s.m>0){if(x.m<s.m*.7)out.push(['warn',s.t+': '+x.m+' of '+s.m+' min. Short. Do the full time next time.']);else if(ez&&x.m>s.m*1.3)out.push(['warn',s.t+': '+x.m+' min vs '+s.m+' planned. Easy sessions do not grow. Stick to the plan.'])}});
  return out}
-function fbWeek(w,wd){const p=pl(w),r=[],t0=new Date(),tk=iso(new Date(t0.getFullYear(),t0.getMonth(),t0.getDate()));let pm=0,dm=0;const ms=[];
- p.days.forEach((ss,i)=>ss.forEach((s,j)=>{if(!s.c||s.del)return;pm+=s.m;const d=iso(dd(w,i));if(ST.done[w+'-'+i+'-'+j])dm+=s.m;else if(d<tk&&/key session|Long|Swim|test|time trial/i.test(s.t))ms.push(DN[i]+' '+s.t)}));
- const lg=Object.keys(ST.ac).some(d=>d>=iso(dd(w))&&d<=iso(dd(w,6)))||dm>0;
- r.push(lg?[dm/pm>=.85?'ok':'warn','Done '+(dm/60).toFixed(1)+' of '+(pm/60).toFixed(1)+' h planned ('+Math.round(100*dm/pm)+'%).']:['info','Nothing logged yet. Planned '+(pm/60).toFixed(1)+' h. Tick sessions or sync Garmin to get feedback.']);
- if(ms.length)r.push(['warn','Missed key sessions: '+ms.slice(0,3).join('; ')+'. Do not cram them in. Move on.']);
- if(wd)for(let i=0;i<7;i++)fbDay(w,i).forEach(x=>r.push([x[0],DN[i]+': '+x[1]]));
- if(lg&&ST.z.rl==172&&ST.z.bl==165)r.push(['warn','Your heart-rate limits are still the defaults. Do the 30-minute test (Zones tab) so the easy limits are accurate.']);
- if(Object.keys(ST.nt).some(k=>k.indexOf(w+'-')==0&&/pain|injur|sharp|dizz|chest|faint/i.test(ST.nt[k])))r.push(['bad','You wrote about pain or dizziness. Do not push through. Rest, and see a doctor for chest pain, dizziness or sharp pain.']);
- const e=[...ST.wt].sort((a,b)=>a.d<b.d?-1:1),l=e[e.length-1],q=e.length>1?e[e.length-2]:null;
- if(l&&q&&(pd(l.d)-pd(q.d))>=6*864e5){const rt=(l.k-q.k)/((pd(l.d)-pd(q.d))/D7);r.push([rt<-.7?'bad':rt>.1?'warn':'ok','Weight trend '+rt.toFixed(2)+' kg/week (plan about -0.25). '+(rt<-.7?'Too fast. Eat more and protect training.':rt>.1?'Rising. Check intake.':'On track.')])}
- return r}
-const fbHtml=w=>fbWeek(w,0).map(x=>`<div style="border-left:4px solid ${FC[x[0]]};padding:2px 8px;margin:4px 0">${E(x[1])}</div>`).join('');
+const sh=(t,n)=>{if(t.length<=n)return t;const c=t.slice(0,n),i=c.lastIndexOf(' ');return (i>40?c.slice(0,i):c)+'…'};
+function coach(w){const p=pl(w),td=new Date(),tk=iso(new Date(td.getFullYear(),td.getMonth(),td.getDate()));
+ if(tk<iso(dd(0)))return{lv:'info',h:'Plan starts Monday '+fd(dd(0))+'.',l:['Week 1 is '+p.h.toFixed(1)+' h. Do not add extra sessions. Before Monday: enter your numbers in Settings. The FTP test is on the Thursday of week 4. Until then run the KICKR sessions on RPE.']};
+ let pp=0,dn=0,nx=null;const ms=[],ls=[];
+ p.days.forEach((ss,i)=>ss.forEach((s,j)=>{if(!s.c||s.del)return;const d=iso(dd(w,i)),ok=ST.done[w+'-'+i+'-'+j];if(d<tk){pp+=s.m;if(ok)dn+=s.m;else if(/key session|Long|Swim|test|time trial/i.test(s.t))ms.push(DN[i]+' '+s.t)}else if(!ok&&!nx)nx={i,s}}));
+ const r=pp?dn/pp:1,lv=!pp?'info':r>=.85?'ok':r>=.6?'warn':'bad',h=!pp?'Week '+(w+1)+' is live.':r>=.85?'On track.':r>=.6?'Slipping.':'Off track.';
+ if(pp)ls.push('Done '+(dn/60).toFixed(1)+' of '+(pp/60).toFixed(1)+' h due so far ('+Math.round(100*r)+'%).'+(r<.85?' Do not make it up. Stick to the plan from here.':''));
+ if(ms.length)ls.push('Missed: '+ms.slice(0,3).join('; ')+'. Skip '+(ms.length>1?'them':'it')+'. Never stack '+(ms.length>1?'them':'it')+' onto another day.');
+ for(let i=0;i<7;i++)if(iso(dd(w,i))<=tk)fbDay(w,i).forEach(x=>{if(x[0]!='ok')ls.push(x[1])});
+ const e=[...ST.wt].sort((a,b)=>a.d<b.d?-1:1),l=e[e.length-1],q=e.length>1?e[e.length-2]:null,rt=RATE();
+ if(l&&q&&(pd(l.d)-pd(q.d))>=6*864e5){const v=(l.k-q.k)/((pd(l.d)-pd(q.d))/D7);ls.push('Weight: '+(v>0?'+':'')+v.toFixed(2)+' kg/week against a plan of -'+rt.toFixed(2)+'. '+(v<-.7?'Too fast. Eat more or you will lose training quality.':v>.1?'Rising. Check your intake.':rt&&v>-rt+.1?'Slower than plan. Tighten up.':'Good. Hold it.'))}
+ else if(!W0()||!WG())ls.push('Set your current and goal weight in Settings so I can track your trend.');
+ if(Object.keys(ST.nt).some(k=>k.indexOf(w+'-')==0&&/pain|injur|sharp|dizz|chest|faint/i.test(ST.nt[k])))ls.push('You wrote about pain or dizziness. Do not push through. Rest, and see a doctor for chest pain, dizziness or sharp pain.');
+ if(ST.z.rl==172&&ST.z.bl==165&&w>0)ls.push('Your heart-rate limits are still defaults, so my easy limits are guesses. Do the 30-minute test.');
+ if(!ST.z.ftp&&p.days.flat().some(x=>/KICKR/.test(x.t)&&!x.del))ls.push('No FTP set. Run the indoor sessions on RPE until you do the FTP test.');
+ if(nx)ls.push('Next: '+DN[nx.i]+', '+nx.s.t+', '+hm(nx.s.m)+'. '+sh(ex(nx.s.d,nx.s.k=='race'?'bike':nx.s.k),130));
+ return{lv,h,l:ls}}
+const coachIn=w=>{const c=coach(w);return `<b class="h"><span style="color:${FC[c.lv]}">●</span> ${E(c.h)}</b>`+c.l.map(x=>`<p>${E(x)}</p>`).join('')};
 function cpText(w){const p=pl(w),P=PH[p.pi],o=[];
- o.push('I am training for IRONMAN 70.3 New Zealand Taupo (Sat 4 Mar 2028), goal sub 5:00. Week '+(w+1)+' of '+N+' ('+fd(dd(w))+' to '+fd(dd(w,6))+'), phase: '+(w>69?'Taper':P.n)+(p.rec?' (recovery week)':'')+'.');
+ o.push('I am training for IRONMAN 70.3 New Zealand Taupo (Sat 4 Mar 2028), goal sub 5:00. Week '+(w+1)+' of '+N+' ('+fd(dd(w))+' to '+fd(dd(w,6))+'), phase: '+(w>=65?'Taper':P.n)+(p.rec?' (recovery week)':'')+'.');
  o.push('Easy heart-rate limits: run up to '+Math.round(ST.z.rl*.89)+' bpm, bike up to '+Math.round(ST.z.bl*.89)+' bpm.'+(ST.z.ftp?' Bike FTP '+ST.z.ftp+' W.':''));
  p.days.forEach((ss,i)=>{const a=ST.ac[iso(dd(w,i))];ss.forEach((s,j)=>{if(s.del)return;const k=w+'-'+i+'-'+j,n=ST.nt[k];o.push(DN[i]+' '+s.k+' "'+s.t+'" planned '+s.m+' min: '+(ST.done[k]?'DONE':'not done')+(n?'. Note: '+n:''))});if(a)o.push(DN[i]+' Garmin: '+a.map(x=>x.k+' '+x.m+' min'+(x.h?', avg '+x.h+' bpm':'')+(x.km?', '+x.km+' km':'')).join('; '))});
- const e=[...ST.wt].sort((a,b)=>a.d<b.d?-1:1).slice(-3);if(e.length)o.push('Recent weights (kg): '+e.map(x=>x.d+' '+x.k).join(', ')+'. Plan: lose about 0.25 kg/week.');
- o.push('App notes: '+fbWeek(w,1).map(x=>x[1]).join(' '));
- o.push('Please give short, strict, constructive feedback in simple words: what went well, what to fix, how to adjust next week, and any red flags.');
+ const e=[...ST.wt].sort((a,b)=>a.d<b.d?-1:1).slice(-3);if(e.length)o.push('Recent weights (kg): '+e.map(x=>x.d+' '+x.k).join(', ')+(WG()?'. Goal '+WG()+' kg.':''));
+ o.push('App analysis: '+coach(w).l.join(' '));
+ o.push('Give short, strict, constructive feedback in simple words: what went well, what to fix, how to adjust next week, and any red flags.');
  return o.join('\n')}
 const cpDo=()=>{const t=$('#cp'),s=$('#cps'),ok=()=>{s.textContent='Copied ✓'},no=()=>{s.textContent='Select the text and copy it'},fb=()=>{try{document.execCommand('copy')?ok():no()}catch(e){no()}};t.select();t.setSelectionRange(0,99999);try{navigator.clipboard.writeText(t.value).then(ok,fb)}catch(e){fb()}};
-const chatUrl=()=>(ST.z.cl||'').indexOf('https://claude.ai/')==0?ST.z.cl:'https://claude.ai/new';
-const setCl=v=>{v=v.trim();ST.z.cl=v.indexOf('https://claude.ai/')==0?v:'';sv();$('#ocl').href=chatUrl();$('#cps').textContent=ST.z.cl?'Chat link saved ✓':'Link must start with https://claude.ai/'};
-const fbCard=w=>`<div class="cd"><b>Feedback</b><div id="fbl">${fbHtml(w)}</div><details><summary class="mu">Copy for Claude</summary><p class="mu">Tap Copy, open a Claude chat, paste, and ask for feedback.</p><textarea id="cp" rows="6" style="width:100%" readonly>${E(cpText(w))}</textarea><p><button onclick="cpDo()">Copy</button> <a id="ocl" href="${E(chatUrl())}" target="_blank" rel="noopener">Open Claude chat</a> <span id="cps" class="mu"></span></p><p class="mu">To open this exact chat, paste its link here once: <input value="${E(ST.z.cl||'')}" placeholder="https://claude.ai/chat/..." style="width:100%" onchange="setCl(this.value)"></p></details></div>`;
+const coachCard=w=>`<div class="card coach"><div class="mu" style="margin-bottom:6px">Coach</div><div id="cc">${coachIn(w)}</div><details style="margin-top:10px"><summary class="mu">Ask Claude about this week</summary><p class="mu">Copy, open a Claude chat, paste.</p><textarea id="cp" rows="5" readonly>${E(cpText(w))}</textarea><p><button class="btn" onclick="cpDo()">Copy</button> <a href="https://claude.ai/new" target="_blank" rel="noopener">Open Claude</a> <span id="cps" class="mu"></span></p></details></div>`;
 const actL=(w,i)=>actL0(w,i)+fbDay(w,i).map(x=>`<div style="color:${FC[x[0]]};font-size:13px;margin-top:3px">${E(x[1])}</div>`).join('');
-function wkView(w){
- const p=pl(w),P=PH[p.pi],ti=(new Date().getDay()+6)%7,isC=w==curW(),nm=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
- let o=`<div class="cd"><div style="display:flex;gap:6px;align-items:center"><button onclick="cw=Math.max(0,cw-1);draw()">◀</button><select onchange="cw=+this.value;draw()" style="flex:1;min-width:0">${Array.from({length:N},(_,i)=>`<option value="${i}" ${i==w?'selected':''}>W${i+1} · ${fd(dd(i))} · ${i>69?'Taper':PH[pl(i).pi].n}</option>`).join('')}</select><button onclick="cw=Math.min(N-1,cw+1);draw()">▶</button><button onclick="cw=curW();draw()">Today</button></div>
- <p style="margin:8px 0 2px"><b style="color:${P.c}">${w>69?'Taper & race':P.n}</b> ${p.rec?'<span class="tag">recovery week</span> ':''}${p.rc?'<span class="tag">race week</span> ':''}· <b>${p.h.toFixed(1)} h</b> <span class="mu">counted (easy commute legs excluded)</span></p><div class="mu">${P.f}</div><div class="bar" style="margin-top:6px"><i id="pb" style="width:${prog(w)}%"></i></div></div>`;
- o+=fbCard(w);p.days.forEach((ss,i)=>{o+=`<div class="cd"${isC&&i==ti?' style="border:2px solid var(--ac)"':''}><b>${nm[i]}</b> <span class="mu">${fd(dd(w,i))}${[0,1,4].includes(i)?' · office day':[2,3].includes(i)?' · WFH, train before 7am':''}</span>`;
-  ss.forEach((x,j)=>{if(x.del)return;const k=w+'-'+i+'-'+j;o+=`<details class="s" ${OPEN==k?'open':''} style="--c:${C[x.k]}"><summary><input type="checkbox" ${ST.done[k]?'checked':''} onclick="tg('${k}',this)"><b>${E(x.t)}</b><span class="mu">${hm(x.m)} · ${x.at||stt(i,x.m)}${x.c?'':' · not counted'}</span></summary><div class="d">${E(ex(x.d,x.k=='race'?'bike':x.k))}</div>${edF(k,x)}</details>`});o+=actL(w,i)+addF(w,i)+'</div>'});
+const sp={swim:'🏊',bike:'🚴',run:'🏃',gym:'🏋️',race:'🏁'};
+const W0=()=>ST.z.w0||(ST.wt.length?[...ST.wt].sort((a,b)=>a.d<b.d?-1:1)[0].k:0),WG=()=>ST.z.wg||0,RATE=()=>W0()&&WG()&&W0()>WG()?Math.min(.5,(W0()-WG())/55):0,tw=w=>W0()&&WG()?Math.max(WG(),W0()-RATE()*w):0;
+const CK=[['2026-12-28','5 km ≤ 29:30','—','Set FTP (week 4 test)'],['2027-03-15','5 km ≤ 27:30','750 m unbroken, CSS ≤ 2:05','FTP +5% vs baseline'],['2027-06-07','10 km ≤ 55:00','CSS ≤ 2:00','FTP +8%'],['2027-08-30','5 km ≤ 24:30','CSS ≤ 1:55','FTP +12%'],['2027-10-25','Half marathon ≤ 1:50 (decision gate)','CSS ≤ 1:52','90 km ≤ 3:00 at HR ≤ 85% LTHR'],['2028-01-17','Dress rehearsal ≤ 5:10','CSS ≤ 1:48','90 km ≤ 2:45, then 10 km ≤ 4:40/km']];
+function row(w,i,j,x){const k=w+'-'+i+'-'+j;return `<details class="s" ${OPEN==k?'open':''} style="--c:${C[x.k]}"><summary><input type="checkbox" ${ST.done[k]?'checked':''} onclick="tg('${k}',this)"><span class="ti"><b>${sp[x.k]} ${E(x.t)}</b><span class="mu">${hm(x.m)} · ${x.at||stt(i,x.m)}${x.c?'':' · not counted'}</span></span></summary><div class="d">${E(ex(x.d,x.k=='race'?'bike':x.k))}</div>${edF(k,x)}</details>`}
+function tdView(){const w=curW(),td=new Date(),pre=iso(td)<iso(dd(0)),day=pre?0:(td.getDay()+6)%7,p=pl(w);
+ let o=coachCard(w)+'<h2>'+(pre?'First day · '+DN[0]+' '+fd(dd(0)):'Today')+'</h2>';
+ const ss=p.days[day].map((x,j)=>[x,j]).filter(a=>!a[0].del);
+ o+=ss.length?ss.map(a=>row(w,day,a[1],a[0])).join(''):'<div class="card mu">Rest day. No sessions. Eat, sleep, stretch.</div>';
+ const nw=day<6?w:w+1,nd=day<6?day+1:0;
+ if(nw<N){const q=pl(nw).days[nd].filter(x=>!x.del);o+='<h2>'+(pre?'Then':'Tomorrow')+'</h2><div class="card mu">'+(q.length?q.map(x=>sp[x.k]+' '+E(x.t)+' · '+hm(x.m)).join('<br>'):'Rest day')+'</div>'}
  return o}
-function rmView(){
- let b='';for(let w=0;w<N;w++){const p=pl(w),h=p.h*5.6;b+=`<rect x="${w*11.7}" y="${90-h}" width="10.5" height="${h}" fill="${PH[p.pi].c}" opacity="${p.rec?.5:1}"><title>W${w+1} ${fd(dd(w))}: ${p.h.toFixed(1)} h</title></rect>`}
- return `<div class="cd"><b>Counted hours per week</b> <span class="mu">(faded = recovery week; lines at 10 h and 14 h)</span><svg viewBox="0 0 860 96" style="width:100%"><line x1="0" x2="860" y1="${90-56}" y2="${90-56}" stroke="var(--ln)"/><line x1="0" x2="860" y1="${90-78.4}" y2="${90-78.4}" stroke="var(--ln)" stroke-dasharray="4"/>${b}</svg><div class="mu">Cycles of 3 load weeks + 1 lighter week. Tests (5 km TT, CSS, 20-min bike) sit inside the plan.</div></div>
- <div class="cd tb"><b>Phases</b><table><tr><th>Phase</th><th>Dates</th><th>Wk</th><th>Focus</th></tr>${PH.map(p=>`<tr><td style="color:${p.c}"><b>${p.n}</b></td><td>${fd(dd(p.a))} – ${fy(dd(p.b,6))}</td><td>${p.a+1}–${p.b+1}</td><td>${p.f}</td></tr>`).join('')}</table></div>
- <div class="cd tb"><b>Race ladder: short to long</b> <span class="mu">A = goal, B = rehearsal with mini-taper, C = train through, O = optional (no plan change). Verify dates at <a href="https://triathlon.kiwi/events-calendar" target="_blank" rel="noopener">triathlon.kiwi</a>.</span><table><tr><th>Date</th><th>Wk</th><th>Race</th><th>Dist</th><th></th><th>Status</th></tr>${RCe().map((r,i)=>`<tr><td>${i==8?fy(pd(r[0])):`<input type="date" value="${r[0]}" onchange="ST.rd[${i}]=this.value;PL.length=0;sv();draw()">`}</td><td>${Math.floor((pd(r[0])-S0)/D7)+1}</td><td>${r[1]}</td><td>${r[2]}</td><td><span class="tag">${r[3]}</span></td><td class="mu">${r[4]}</td></tr>`).join('')}</table></div>`}
-function glView(){
- const R=[[11,'5 km ≤ 29:30','—','Log commute HR + speed'],[22,'5 km ≤ 27:30','750 m unbroken, CSS ≤ 2:05','20-min test baseline (W16)'],[34,'10 km ≤ 55:00','CSS ≤ 2:00','+4% speed vs baseline'],[46,'5 km ≤ 24:30','CSS ≤ 1:55','+8% vs baseline'],[54,'HM ≤ 1:50 (Auckland Half): GATE','CSS ≤ 1:52','90 km ≤ 3:00 at HR ≤ 85% LTHR'],[66,'Dress rehearsal ≤ 5:10 total','CSS ≤ 1:48','90 km ≤ 2:45, then 10 km ≤ 4:40/km']];
- return `<div class="cd"><b>Target: sub-5:00, IRONMAN 70.3 NZ Taupō, Sat 4 Mar 2028</b> <span class="mu">(projected date; 6 Mar 2027 is confirmed)</span>
- <div class="tb"><table><tr><th>Plan</th><th>Swim</th><th>T1</th><th>Bike</th><th>T2</th><th>Run</th><th>Total</th></tr><tr><td>A bike-led</td><td>36:00</td><td>3:30</td><td>2:40 (33.8 km/h)</td><td>2:30</td><td>1:35 (4:30/km)</td><td><b>4:57</b></td></tr><tr><td>B run-lighter</td><td>38:00</td><td>3:30</td><td>2:32 (35.5 km/h)</td><td>3:30</td><td>1:40 (4:44/km)</td><td><b>4:57</b></td></tr><tr><td>Fallback</td><td>40:00</td><td>4:00</td><td>2:50</td><td>3:00</td><td>1:42</td><td>5:19</td></tr></table></div>
- <p><b>Reality check:</b> from a 2:26 half marathon, sub-5 needs roughly a 1:35 half off the bike. That is a stretch goal. Losing about 16 kg is your biggest lever for climbs and the run, but only if you still fuel the key sessions. Reaching 5:15–5:20 first would be a strong result.</p>
- <p class="mu">Course (event listings): 1.9 km wetsuit swim in Lake Taupō (about 18–19 °C), 90 km rolling/hilly bike, lakefront half marathon. Pace by HR and RPE outdoors, and by FTP on the KICKR indoors.</p></div>
- <div class="cd tb"><b>Checkpoints</b> <span class="mu">(estimates; re-derive from your own test results)</span><table><tr><th>When</th><th>Run</th><th>Swim</th><th>Bike</th><th>Weight</th></tr>${R.map(r=>`<tr><td>W${r[0]+1}<br><span class="mu">${fy(dd(r[0]))}</span></td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td><td>${tw(r[0]).toFixed(1)} kg</td></tr>`).join('')}</table></div>
- <div class="cd"><b>Decision gates</b><p>W47: if 5 km is over 26:00 or CSS is over 2:00, move the target to 5:15 and keep the plan. W55 (half marathon): same rule if you are slower than 1:55. W67 (dress rehearsal): its result sets your race pacing.</p></div>`}
-function znView(){const z=ST.z,rows=['Z1 Recovery','Z2 Aerobic (most hours)','Z3 Tempo','Z4 Sub-threshold','Z5 VO2'].map((n,i)=>`<tr><td>${n}</td><td>${zr(i+1,'run')}</td><td>${zr(i+1,'bike')}</td><td class="mu">${['RPE 1–2','RPE 3–4, full sentences','RPE 5–6, short sentences','RPE 7, a few words','RPE 8–9'][i]}</td></tr>`).join('');
- return `<div class="cd"><b>Your numbers</b><p class="mu">LTHR test: 30 min flat, hard but even; LTHR ≈ average HR of the last 20 min (test run and bike separately; bike is usually 5–8 bpm lower). CSS: 400 m + 200 m time trials. Defaults are placeholders until you test.</p>
- <p>Run LTHR <input type="number" value="${z.rl}" style="width:80px" onchange="ST.z.rl=+this.value;sv();draw()"> Bike LTHR <input type="number" value="${z.bl}" style="width:80px" onchange="ST.z.bl=+this.value;sv();draw()"> CSS /100 m <input value="${pc(z.css)}" style="width:80px" onchange="const m=this.value.split(':');ST.z.css=m.length>1?+m[0]*60+ +m[1]:+m[0];sv();draw()"> Bike FTP (W) <input type="number" value="${z.ftp||''}" placeholder="after test" style="width:90px" onchange="ST.z.ftp=+this.value;sv();draw()"></p><p class="mu">FTP test on your KICKR: 20 min easy warm-up with 3×1 min fast, 5 min easy, then 20 min as hard as you can hold steadily. FTP = 95% of the 20-minute average power. Do it fresh, with a fan. Once FTP is set, sessions show watts.</p><p><label><input type="checkbox" ${z.cm?'checked':''} onchange="ST.z.cm=this.checked?1:0;PL.length=0;sv();draw()"> I ride to work (adds optional easy commute rides on office days)</label></p>
- <div class="tb"><table><tr><th>Zone</th><th>Run bpm</th><th>Bike bpm</th><th>Feel</th></tr>${rows}</table></div>
- <div class="tb"><table><tr><th>Swim pace</th><th>/100 m</th></tr>${[['Easy / drills',10],['CSS+5s',5],['CSS',0],['Fast',-6]].map(x=>`<tr><td>${x[0]}</td><td>${pc(z.css+x[1])}</td></tr>`).join('')}</table></div></div>`}
-function wtView(){const e=[...ST.wt].sort((a,b)=>a.d<b.d?-1:1),X=d=>(pd(d)-S0)/(RACE-S0)*820+30,Y=k=>180-(k-66)*(160/24);
- let tgp='';for(let w=0;w<=N;w++)tgp+=(30+w/N*820)+','+Y(tw(w))+' ';
- const last=e[e.length-1];
- return `<div class="cd"><b>Weight</b> <span class="mu">86 kg → 70 kg at about 0.25 kg/week, then hold (dashed = plan)</span>
- <svg viewBox="0 0 880 200" style="width:100%"><polyline fill="none" stroke="var(--mu)" stroke-dasharray="5" points="${tgp}"/>${e.length>1?`<polyline fill="none" stroke="var(--ac)" stroke-width="2" points="${e.map(x=>X(x.d)+','+Y(x.k)).join(' ')}"/>`:''}${e.map(x=>`<circle cx="${X(x.d)}" cy="${Y(x.k)}" r="3.5" fill="var(--ac)"/>`).join('')}<text x="2" y="${Y(86)}" font-size="11" fill="var(--mu)">86</text><text x="2" y="${Y(70)}" font-size="11" fill="var(--mu)">70</text></svg>
- <p>${last?`Latest <b>${last.k} kg</b> (${last.d}) · lost ${(86-last.k).toFixed(1)} kg · ${Math.max(0,last.k-70).toFixed(1)} kg to go · plan says ${tw((pd(last.d)-S0)/D7).toFixed(1)} kg for that date`:'No entries yet.'}</p>
- <input type="date" id="wd" value="${iso(new Date())}"> <input type="number" step="0.1" id="wk" placeholder="kg" style="width:80px"> <button onclick="const k=parseFloat($('#wk').value),d=$('#wd').value;if(k&&d){ST.wt=ST.wt.filter(x=>x.d!=d).concat({d,k});sv();draw()}">Add</button> <button onclick="ST.wt.pop();sv();draw()">Undo last</button>
- <p class="mu">Weigh weekly, same morning, same conditions. Judge the 3-week trend. If key sessions fall apart for 2 weeks, pause the deficit.</p></div>`}
-function mtView(){return `<div class="cd tb"><b>What each coach contributes</b><table><tr><th>Source</th><th>Principle</th><th>In your plan</th></tr>
-<tr><td>Dan Lorang (Frodeno, Haug)</td><td>Blocks run speed/technique → strength-endurance → race-specific; run strength before speed; strength work non-negotiable; bike paced for the run; races are not training; adjust to the athlete daily.</td><td>Foundation = strides, hills, gym AA. Base/Build 1 = max-strength gym + sub-threshold. Specific = race-pace bricks. Fatigue rules below.</td></tr>
-<tr><td>Dr Dan Plews</td><td>Mostly easy (polarised/pyramidal), volume before intensity, short sub-60 s high-intensity work suits long-course athletes, race-pace sessions such as 6×800 m with 300 m at race pace.</td><td>About 80% of hours in Z1–Z2; 30 s hill strides; the 6×(800+300) session in Specific.</td></tr>
-<tr><td>Lance Watson (LifeSport)</td><td>Race-specific bricks; 70.3 bike effort about 75–88% of FTP for strong age-groupers; the classic error is racing harder than you trained; low-cadence strength-endurance (6×3 min at 60–70 rpm).</td><td>Indoors the KICKR gives power (% FTP). Outdoors, on Saturday and race day, use a bike HR cap ≤ 88% LTHR (RPE 6). Saturday brick runs at goal pace. Low-cadence blocks on the trainer.</td></tr>
-<tr><td>Blummenfelt / Olav Bu</td><td>High volume at low intensity plus a lot of controlled threshold work, guided by lactate. The pros train about 30 h/week; copying that volume would break a 10–14 h athlete.</td><td>The principle, not the volume: 2 controlled sub-threshold sessions a week (Wed run, Thu bike) held by HR, RPE and talk test, never two in a day, stop 1–2 reps short.</td></tr></table></div>
-<div class="cd"><b>Weekly shape</b><p>Mon gym A · Tue indoor quality on the KICKR · Wed 4am run key + evening swim · Thu indoor key session on the KICKR (early morning) + gym B · Fri indoor easy spin (until January 2027), then a short technique swim · Sat OUTDOOR long ride + brick run · Sun long run + late-morning swim. With no bike commute, the 10–14 h is your whole training week. Office-day sessions are after work. If you start riding to work again, tick the box in the Zones tab.</p></div>
-<div class="cd"><b>Fatigue rules (Lorang: listen daily)</b><p><b>Green</b>: sleep 7 h+, resting HR within 3 bpm of normal: train as written. <b>Amber</b>: sleep 6–7 h or resting HR +4–6: intervals become Z2, drop 1 rep, shorten the easy sessions. <b>Red</b>: under 6 h, resting HR +7, illness or pain: rest; never stack the missed session onto another day.</p></div>
-<div class="cd"><b>Fuel and weight</b><p>Glide path about 0.25 kg/week (roughly 250–300 kcal/day deficit), taken from rest days and evenings, not from key sessions. Protein 1.8–2.2 g/kg. Carbs 60–90 g/h on rides over 2 h; train the gut to 80–90 g/h by W60 (elites go higher). No deficit in taper or race week. If 70 kg costs you session quality, hold at 72 and let fitness do the rest.</p></div>
-<div class="cd"><b>Safety and gear</b><p>3–4am training: front light 600+ lm, flashing rear, reflective vest, headlamp for runs, no earbuds, quiet roads, share your route. Indoor sessions on the KICKR remove most of the early-morning road risk. Gear ladder: lights now → pool + adult swim lessons (Dec) → wetsuit by Oct 2027 → optional power pedals for Saturday outdoor rides → clip-on aero bars + fit check by Nov 2027 → optional lactate meter.</p></div>`}
-const TABS=['Week','Roadmap','Goals','Zones','Weight','Method','Data','Garmin'];let tab=0,cw=curW();
+function wkView(w){const p=pl(w),P=PH[p.pi],ti=(new Date().getDay()+6)%7,isC=w==curW();
+ let o=`<div class="wn"><button class="ic" onclick="cw=Math.max(0,cw-1);draw()">‹</button><div style="text-align:center"><b>Week ${w+1}</b><div class="mu">${fd(dd(w))} – ${fd(dd(w,6))}</div></div><button class="ic" onclick="cw=Math.min(N-1,cw+1);draw()">›</button></div>
+ <div class="card"><div class="row"><span><b style="color:${P.c}">${w>=65?'Taper & race':P.n}</b>${p.rec?'<span class="pill">recovery</span>':''}</span><span class="mu">${p.h.toFixed(1)} h planned</span></div><div class="bar"><i id="pb" style="width:${prog(w)}%"></i></div>${w==curW()?'':`<p style="margin:10px 0 0"><button onclick="cw=curW();draw()">Back to this week</button></p>`}</div>`;
+ p.days.forEach((ss,i)=>{o+=`<section class="day${isC&&i==ti?' today':''}"><h3>${DN[i]} <span class="mu">${fd(dd(w,i))}</span></h3>`;ss.forEach((x,j)=>{if(!x.del)o+=row(w,i,j,x)});o+=actL(w,i)+`<details class="add"><summary>+ Add session</summary>${addF(w,i)}</details></section>`});
+ return o}
+function pgView(){const segs=PH.map(p=>`<div style="flex:${Math.min(p.b,N-1)-p.a+1};background:${p.c}" title="${p.n}"></div>`).join(''),
+ e=[...ST.wt].sort((a,b)=>a.d<b.d?-1:1),w0=W0(),wg=WG(),X=d=>(pd(d)-S0)/(RACE-S0)*820+30,vs=e.map(x=>x.k).concat(w0?[w0]:[],wg?[wg]:[]),lo=vs.length?Math.min(...vs)-1:60,hi=vs.length?Math.max(...vs)+1:90,Y=k=>180-(k-lo)*(160/(hi-lo||1)),tdy=iso(new Date()),nk=CK.find(c=>c[0]>=tdy)||CK[CK.length-1],last=e[e.length-1];
+ let tgp='';if(w0&&wg)for(let w=0;w<=N;w++)tgp+=(30+w/N*820)+','+Y(tw(w))+' ';
+ return `<div class="card"><b>Timeline</b><div class="tl">${segs}<i style="left:${(curW()+.5)/N*100}%"></i></div><div class="mu">${PH.map(p=>p.n.split(' ')[0]).join(' · ')}</div></div>
+ <div class="card"><b>Target: sub-5:00 · IRONMAN 70.3 NZ Taupō</b><div class="mu">Sat 4 Mar 2028 (projected, verify on ironman.com)</div><p>Plan A: swim 36:00 · T1 3:30 · bike 2:40 · T2 2:30 · run 1:35 (4:30/km) = <b>4:57</b></p><p class="mu">Sub-5 needs about a 1:35 half marathon off the bike. It is a stretch. 5:15–5:20 is the realistic fallback. Gates: if by 30 Aug 2027 your 5 km is over 26:00 or CSS is over 2:00, or your half marathon on 25 Oct 2027 is slower than 1:55, move the goal to 5:15 and keep training.</p></div>
+ <div class="card"><b>Next checkpoint · ${fy(pd(nk[0]))}</b><p>Run: ${nk[1]}<br>Swim: ${nk[2]}<br>Bike: ${nk[3]}${tw((pd(nk[0])-S0)/D7)?`<br>Weight: ${tw((pd(nk[0])-S0)/D7).toFixed(1)} kg`:''}</p><div class="mu">Estimates. Re-derive from your own test results.</div></div>
+ <div class="card"><b>Weight</b>${w0&&wg?`<svg viewBox="0 0 880 200" style="width:100%"><polyline fill="none" stroke="var(--mu)" stroke-dasharray="5" points="${tgp}"/>${e.length>1?`<polyline fill="none" stroke="var(--ac)" stroke-width="2.5" points="${e.map(x=>X(x.d)+','+Y(x.k)).join(' ')}"/>`:''}${e.map(x=>`<circle cx="${X(x.d)}" cy="${Y(x.k)}" r="4" fill="var(--ac)"/>`).join('')}</svg><div class="mu">Dashed = plan (about ${RATE().toFixed(2)} kg/week to ${wg} kg).</div>`:`<p class="mu">Enter your current and goal weight in Settings to see the plan line.</p>`}
+ <p>${last?`Latest <b>${last.k} kg</b> (${last.d})${wg?` · ${Math.max(0,last.k-wg).toFixed(1)} kg to goal`:''}`:'No entries yet.'}</p>
+ <div style="display:flex;gap:6px;flex-wrap:wrap"><input type="date" id="wd" value="${iso(new Date())}"><input type="number" step="0.1" id="wk" placeholder="kg" style="width:90px"><button class="btn" onclick="const k=parseFloat($('#wk').value),d=$('#wd').value;if(k&&d){ST.wt=ST.wt.filter(x=>x.d!=d).concat({d,k});sv();draw()}">Add</button><button onclick="ST.wt.pop();sv();draw()">Undo</button></div><div class="mu" style="margin-top:6px">Weigh weekly, same morning. Judge the 3-week trend.</div></div>
+ <div class="card"><b>Races</b> <span class="mu">A goal · B rehearsal · C train through. Verify dates at <a href="https://triathlon.kiwi/events-calendar" target="_blank" rel="noopener">triathlon.kiwi</a>.</span>${RCe().map((r,i)=>[r,i]).filter(a=>a[0][3]!='O'&&a[0][0]>=tdy).map(a=>{const r=a[0],i=a[1];return `<div class="row"><span>${i==8?fy(pd(r[0])):`<input type="date" value="${r[0]}" onchange="ST.rd[${i}]=this.value;PL.length=0;sv();draw()">`}<br><span class="mu">${E(sh(r[1],54))} · ${r[2]}</span></span><span class="pill">${r[3]}</span></div>`}).join('')}</div>`}
+function stView(){const z=ST.z,f=(l,id,v,ph)=>`<label class="fld"><span class="mu">${l}</span><input type="number" step="any" value="${v||''}" placeholder="${ph||''}" onchange="ST.z.${id}=+this.value;PL.length=0;sv();draw()"></label>`;
+ return `<details class="card" open><summary>Training numbers</summary><div class="g2" style="margin-top:12px">${f('Run LTHR (bpm)','rl',z.rl)}${f('Bike LTHR (bpm)','bl',z.bl)}${f('Bike FTP (W)','ftp',z.ftp,'after test')}<label class="fld"><span class="mu">Swim CSS (m:ss per 100 m)</span><input value="${pc(z.css)}" onchange="const m=this.value.split(':');ST.z.css=m.length>1?+m[0]*60+ +m[1]:+m[0];sv();draw()"></label>${f('Current weight (kg)','w0',z.w0)}${f('Goal weight (kg)','wg',z.wg)}</div><p><label><input type="checkbox" ${z.cm?'checked':''} onchange="ST.z.cm=this.checked?1:0;PL.length=0;sv();draw()"> I ride to work (adds optional easy commute rides)</label></p><p class="mu">LTHR: 30 min hard and even; use the average of the last 20 min (bike is usually 5–8 bpm lower). FTP: 95% of a 20-min all-out indoor effort (test in week 4). CSS: (400 m time − 200 m time) ÷ 2 per 100 m. Defaults are guesses until you test.</p></details>
+ ${window.claude?'<div class="card mu">This page saves to your claude.ai account. Garmin sync and file backup work in the downloaded app.</div>':`<details class="card"><summary>Garmin sync</summary>${syncCard()}</details><details class="card"><summary>Backup</summary>${bkView0()}</details>`}
+ <details class="card"><summary>Rules</summary><p><b>Green</b>: sleep 7 h+, resting HR within 3 bpm of normal: train as written. <b>Amber</b>: sleep 6–7 h or resting HR +4–6: intervals become easy, drop 1 rep. <b>Red</b>: under 6 h, resting HR +7, illness or pain: rest, and never stack the missed session. Never run two hard days in a row. No weight-loss deficit in taper or race week.</p></details>`}
+const TABS=[['🏠','Today',tdView],['📅','Week',wkView],['📈','Progress',pgView],['⚙️','Settings',stView]];let tab=0,cw=curW();
 (async()=>{try{const c=window.claude;if(!c||!c.use){sst('Auto-saves on this device');return}
 const[db,us]=await Promise.all([c.use('db'),c.use('user')]),id=us&&await us.id();
 if(!db||!id){sst('Cloud save off (sign in to claude.ai): saved on this device only');return}
@@ -271,6 +281,9 @@ DBR=ref;PL.length=0;draw();if(dirty)flush();else sst('Saved ✓');
 ref.onSnapshot(s=>{if(s.metadata.hasPendingWrites||!s.exists)return;const d=s.data();if(d&&d.u>ST.u){ST=mg(d);PL.length=0;draw();sst('Synced ✓')}},()=>{});
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&dirty)flush()});
 }catch(e){sst('Saved on this device only')}})();
-function draw(){$('#nv').innerHTML=TABS.map((t,i)=>`<button class="${i==tab?'on':''}" onclick="tab=${i};draw()">${t}</button>`).join('');$('#v').innerHTML=[wkView,rmView,glView,znView,wtView,mtView,bkView,gaView][tab](cw);$('#hd').textContent='Race Sat 4 Mar 2028 (projected) · '+Math.ceil((RACE-new Date())/864e5)+' days to go · v8 · this is week '+(curW()+1)+' of '+N}
+function draw(){$('#nv').innerHTML=TABS.map((t,i)=>`<button class="${i==tab?'on':''}" onclick="tab=${i};draw();scrollTo(0,0)"><span>${t[0]}</span>${t[1]}</button>`).join('');
+ const td=new Date(),w=curW();$('#t1').textContent=td.toLocaleDateString('en-NZ',{weekday:'long',day:'numeric',month:'short'});
+ $('#t2').textContent='Week '+(w+1)+' of '+N+' · '+(w>=65?'Taper & race':PH[pl(w).pi].n)+' · '+Math.max(0,Math.ceil((RACE-td)/864e5))+' days to Taupō · v9';
+ $('#v').innerHTML=TABS[tab][2](cw)}
 draw();auto();
 </script><script>if('serviceWorker' in navigator&&location.protocol.indexOf('http')==0&&!window.claude)navigator.serviceWorker.register('sw.js').catch(function(){});try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}</script></body></html>
