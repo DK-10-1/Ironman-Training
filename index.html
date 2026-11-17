@@ -48,7 +48,7 @@ const iso=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+Stri
 const fd=d=>d.toLocaleDateString('en-NZ',{day:'numeric',month:'short'}),fy=d=>d.toLocaleDateString('en-NZ',{day:'numeric',month:'short',year:'numeric'});
 const pc=s=>Math.floor(s/60)+':'+String(Math.round(s%60)).padStart(2,'0'),hm=m=>Math.floor(m/60)+'h'+String(m%60).padStart(2,'0');
 const C={swim:'#2563eb',bike:'#d97706',run:'#dc2626',gym:'#7c3aed',race:'#16a34a'};
-const DEF=()=>({done:{},wt:[],z:{rl:172,bl:165,css:125},ov:{},nt:{},ad:{},rd:{},ac:{},u:0}),mg=o=>{const x=JSON.parse(JSON.stringify(o)),r={...DEF(),...x,z:{...DEF().z,...(x.z||{})}};if(x.v!==9&&Object.keys(x).length){r.done={};r.nt={};r.ac={};r.ov={};r.ad={}}r.v=9;return r};
+const DEF=()=>({done:{},wt:[],z:{rl:172,bl:165,css:125},ov:{},nt:{},ad:{},rd:{},ac:{},u:0}),mg=o=>{const x=JSON.parse(JSON.stringify(o)),r={...DEF(),...x,z:{...DEF().z,...(x.z||{})}};if(x.v!==11&&Object.keys(x).length){r.done={};r.nt={};r.ac={};r.ov={};r.ad={}}r.v=11;return r};
 let ST=DEF(),DBR=null,SVT=null,SVP=false,dirty=false,OPEN='';
 try{ST=mg(JSON.parse(localStorage.getItem('t70')||'{}'))}catch(e){}
 const sst=t=>{const e=$('#sv');if(e)e.textContent=t};
@@ -59,11 +59,11 @@ const ZN=[[0,.8],[.81,.89],[.9,.93],[.94,.99],[1,1.06]];
 const zr=(z,sp)=>{const l=sp=='run'?ST.z.rl:ST.z.bl,[a,b]=ZN[z-1];return z==1?'<'+Math.round(l*b):Math.round(l*a)+'–'+Math.round(l*b)};
 const ex=(t,sp)=>{if(sp=='gym')return t;if(sp=='swim')return t.replace(/CSS/g,'CSS ('+pc(ST.z.css)+')');const l=sp=='run'?ST.z.rl:ST.z.bl;return t.replace(/Z([1-5])/g,(m,z)=>'Z'+z+' ('+zr(+z,sp)+')').replace(/(\d+)% LTHR/g,(m,p)=>m+' ('+Math.round(l*p/100)+' bpm)').replace(/(\d+)(?:–(\d+))?% FTP/g,(m,a,b)=>ST.z.ftp?m+' ('+Math.round(ST.z.ftp*a/100)+(b?'–'+Math.round(ST.z.ftp*b/100):'')+' W)':m)};
 const PH=[
-{n:'Foundation',a:0,b:6,c:'#64748b',f:'Aerobic base, weight loss, strength-endurance, strides/hills. No pool until Mon 4 Jan 2027 — book adult swim lessons for the first block.',LR:[120,165],LU:[60,90],RK:[50,60],B2:[75,105],S:[0,0],BR:[0,0]},
-{n:'Base (swim build)',a:7,b:22,c:'#2563eb',f:'Swim technique + CSS, sub-threshold work begins, max-strength gym, first sprint races.',LR:[135,180],LU:[70,95],RK:[55,65],B2:[90,120],S:[40,50],BR:[10,15]},
-{n:'Build 1 (winter run block)',a:23,b:38,c:'#dc2626',f:'Run economy + controlled threshold, duathlon and half-marathon benchmarks, first Olympic.',LR:[165,210],LU:[90,115],RK:[65,75],B2:[105,135],S:[50,55],BR:[15,20]},
-{n:'Build 2 (bike + open water)',a:39,b:54,c:'#d97706',f:'Sweet-spot bike, long rides, wetsuit + open water, Olympic race, gym to maintenance.',LR:[180,225],LU:[95,110],RK:[65,75],B2:[105,120],S:[50,55],BR:[20,30]},
-{n:'Specific 70.3 + taper',a:55,b:67,c:'#16a34a',f:'Race-pace bricks, nutrition rehearsal, 70.3-distance dress rehearsal, 3-week taper.',LR:[220,240],LU:[100,105],RK:[70,75],B2:[105,120],S:[60,60],BR:[30,40]}];
+{n:'Foundation',a:0,b:6,c:'#64748b',f:'Aerobic base, weight loss, strength-endurance, strides/hills. No pool until Mon 4 Jan 2027 — book adult swim lessons for the first block.',LR:[125,150],LU:[65,85],RK:[50,60],B2:[75,85],S:[0,0],BR:[0,0]},
+{n:'Base (swim build)',a:7,b:22,c:'#2563eb',f:'Swim technique + CSS, sub-threshold work begins, max-strength gym, first sprint races.',LR:[130,145],LU:[70,75],RK:[55,65],B2:[80,85],S:[40,50],BR:[10,10]},
+{n:'Build 1 (winter run block)',a:23,b:38,c:'#dc2626',f:'Run economy + controlled threshold, duathlon and half-marathon benchmarks, first Olympic.',LR:[135,140],LU:[80,80],RK:[65,75],B2:[75,80],S:[50,55],BR:[10,10]},
+{n:'Build 2 (bike + open water)',a:39,b:54,c:'#d97706',f:'Sweet-spot bike, long rides, wetsuit + open water, Olympic race, gym to maintenance.',LR:[145,150],LU:[80,85],RK:[65,75],B2:[75,80],S:[50,50],BR:[15,15]},
+{n:'Specific 70.3 + taper',a:55,b:67,c:'#16a34a',f:'Race-pace bricks, nutrition rehearsal, 70.3-distance dress rehearsal, 3-week taper.',LR:[160,170],LU:[85,90],RK:[70,75],B2:[75,80],S:[55,55],BR:[25,30]}];
 const RC=[
 ['2027-02-03','NHTC Swim-Run series, Takapuna (alternate Wed evenings Jan–Mar; 2026 dates were 21 Jan, 4 & 18 Feb, 4 Mar)','Swim-run','O','Open-water practice; confirm 2027 dates with NHTC'],
 ['2027-03-14','Mount Maunganui multi-distance triathlon','Sprint','C','Listed for 14 Mar 2027 (Sprint / Monster-Short / Mini)'],
@@ -77,17 +77,40 @@ const RC=[
 const RCe=()=>RC.map((r,i)=>ST.rd[i]?[ST.rd[i],...r.slice(1)]:r);
 const RT={Sprint:'Train through, no taper. Rehearse wetsuit/open-water start, T1/T2 and kit. Race at RPE 8; swim controlled for the first 100 m. Write down 3 lessons afterwards.',Olympic:'Mini-taper (Thu openers). Controlled first third, then RPE 7–8. Fuel 60–80 g carb/h on the bike. Use your exact 70.3 kit and transition routine.','Du sprint':'Run-bike-run: run 1 at 10 km effort, bike hard on the flat, run 2 by feel. Fitness check for the winter block.',HM:'Benchmark: even splits, first 5 km slightly slower than goal. The result sets your run paces and is a decision gate for sub-5 (see Progress).','70.3-distance':'Dress rehearsal, 6 weeks out. Mini-taper (Thu openers, Fri easy). Bike at intended 70.3 effort (HR ≤ 88% LTHR), exact race nutrition (80–90 g carb/h), run by feel. Test everything you will use at Taupō.'};
 const RD='Swim: steady at CSS+4s, sight every 8 strokes, T1 ≤ 3:30. Bike: first 20 min HR ≤ 85% LTHR, then settle at 85–88% LTHR (RPE 6), 80–90 g carb/h and 500–750 ml fluid/h, spin easy for the last 5 min. Run: first 5 km about 4:40/km (it will feel too easy), then 4:30/km if HR stays controlled; walk aid stations if needed. Plan A = 36:00 / 3:30 / 2:40 / 2:30 / 1:35 = 4:57.';
-const GA=['Goblet squat 3×12 · DB Romanian deadlift 3×12 · Split squat 3×10/leg · Hip thrust 3×12 · Calf raise 3×15 · Plank 3×40 s','Back squat 4×5 · Trap-bar or Romanian deadlift 3×5 · Bulgarian split squat 3×6/leg · Hip thrust 3×8 · Heavy calf raise 3×10 · Copenhagen plank 2×20 s/side','Back squat 3×4 @RPE 7–8 · Box jump 3×5 · Heavy step-ups 3×6/leg · Romanian deadlift 3×6 · Calf raise 3×8 · Side plank 2×30 s','Squat 2×4 @RPE 7 · Romanian deadlift 2×5 · Step-ups 2×6 · 10 min mobility (hips, calves, T-spine)'];
-const GB=['Lat pulldown 3×10 · One-arm DB row 3×10 · Push-up 3×10 · Step-up 3×10/leg · Face pull 3×15 · Pallof press 3×10/side · Swim prep: band pull-down 3×15 + scapular push-up 2×10','Pull-up (assisted/weighted) 4×6 · Incline press 3×6 · Seated row 3×8 · Single-leg RDL 3×8/leg · Straight-arm pulldown 3×12 · Dead bug 3×10/side','Pull-up 3×6 · Overhead press 3×6 · Row 3×8 · Single-leg RDL 3×6/leg · Band swim pulls 3×20'];
-function swm(w,pi,k,m,test){if(k==3)return 'WU 200 easy · drills 6×50 (catch-up, fingertip drag, 6-3-6, sighting every 6 strokes) · Main: 6×100 easy-steady /20s, long relaxed strokes · CD 100 · ≈'+Math.round(m*34/50)*50+' m';
- if(test)return 'WU 400 easy + 4×50 drill. 400 m time trial (all-out but even), 5 min easy, then 200 m time trial. CSS = (T400 − T200) ÷ 2 per 100 m. Enter it in Settings.';
- const a=pi==1?(w<15?0:1):pi,M=[
- ['6×100 @ CSS+6s /20s · 4×50 pull · 4×50 kick. Focus: high-elbow catch, long streamline off every wall.','5×150 steady (RPE 5) /20s · 8×25 fast-form /15s · bilateral breathing 3-5-3.'],
- ['10×100 @ CSS+3s /15s · 4×50 pull.','3×300 pull-buoy steady /30s · 4×50 build /15s.'],
- ['5×200 @ CSS+2s /20s · 4×50 fast /30s.','800–1,000 m continuous (RPE 5), then 6×100 @ CSS /15s.'],
- ['3×400 @ CSS+3s /30s · 8×50 fast /20s.','Open water (Nov–Mar, with a buddy, wetsuit): 25–40 min continuous, sight every 6–8 strokes, 3 deep-water starts. Winter pool: 1,500 m steady + 10×100 @ CSS /10s.'],
- ['400 easy + 1,500 m continuous at CSS+4s (race rehearsal).','10×100 @ CSS /10s · 400 pull steady; practise sighting and drafting (open water if possible).']];
- return 'WU 200 easy + 4×50 drill (catch-up, fingertip drag, 6-3-6) · Main: '+M[a][k-1]+' · CD 100 · ≈'+Math.round(m*34/50)*50+' m'}
+const MOBL=['90/90 hip switches: 10 reps','Couch stretch (hip flexor and quad): 45 s per side','Figure-4 glute stretch: 45 s per side','Standing calf stretch, knee straight: 30 s per side','Soleus stretch, knee bent: 30 s per side','Knee-to-wall ankle rocks: 10 per side','Open-book thoracic rotation: 8 per side','Cat-cow: 10 reps','Child’s pose with reach: 30 s per side'],
+MOB='Mobility routine (10 min, no rushing): '+MOBL.join(' · ')+'.',
+SHD='Shoulder prep (3 min): band external rotation 2×12 per side · wall slides ×10 · doorway pec stretch 30 s per side.',
+AFT='After: 5 min mobility: couch stretch 45 s per side · standing calf stretch 30 s per side · figure-4 glute stretch 45 s per side.';
+const mobCard=()=>`<details class="card"><summary>Mobility routine</summary><p><b>10 minutes: after every gym session and in the Friday session</b></p><ol>${MOBL.map(x=>`<li>${x}</li>`).join('')}</ol><p><b>Before swims (3 min)</b><br>${SHD.replace('Shoulder prep (3 min): ','')}</p><p><b>After long rides and runs (5 min)</b><br>${AFT.replace('After: 5 min mobility: ','')}</p></details>`;
+const GT=['anatomical adaptation','max strength','max strength','strength + power','maintenance'],GR=['Rest 60–90 s between sets. Stop 2 reps short of failure. Add 2.5 kg only if every rep is ≤ RPE 8.','Heavy: rest 2–3 min between sets, stop 2 reps short of failure. Add 2.5 kg only if every rep is ≤ RPE 8.','Heavy: rest 2–3 min between sets, stop 2 reps short of failure. Add 2.5 kg only if every rep is ≤ RPE 8.','Rest 2–3 min. Jumps: full recovery between sets, land softly. Keep 2 reps in reserve.','Keep it crisp: no failure, leave fresh for the key sessions.'];
+const GD=[[40,45],[50,50],[50,50],[45,45],[35,35]];
+const GA=['Goblet squat 3×12 (or leg press) · Superset: chest press (machine or DB) 3×12 + lat pulldown 3×12 · Superset: DB Romanian deadlift 3×12 + plank 3×40 s · Superset: lateral raise 2×12 + biceps curl 2×12 · Calf raise 3×15 · §MOB§',
+'Back squat 4×5 · Superset: bench press 3×6 + seated cable row 3×8 · Superset: incline DB press 3×10 + lat pulldown 3×10 · Superset: Romanian deadlift 3×6 + Copenhagen plank 3×20 s/side · Superset: lateral raise 2×12 + biceps curl 2×10 · Calf raise 3×10 · §MOB§',
+'Back squat 3×4 @RPE 7–8 · Box jump 3×5 (full recovery) · Superset: bench press 3×5 + seated cable row 3×8 · Superset: Romanian deadlift 3×6 + side plank 2×30 s/side · Superset: lateral raise 2×12 + biceps curl 2×10 · Calf raise 3×8 · §MOB§',
+'Squat 2×4 @RPE 7 · Superset: bench press 2×5 + seated cable row 2×8 · Romanian deadlift 2×5 · Superset: lateral raise 2×12 + biceps curl 2×10 · §MOB§'];
+const GB=['Step-up 3×10/leg · Superset: DB overhead press 3×10 + seated cable row 3×12 · Superset: incline DB press 3×10 + face pull 3×15 · Superset: kettlebell swing 3×15 + Pallof press 3×10/side · Triceps pushdown 2×12 · Swim prep: band pull-down 3×15 + scapular push-up 2×10 · §MOB§',
+'Trap-bar deadlift 4×5 · Superset: overhead press 3×6 + pull-up (assisted/weighted) 3×6 · Superset: chest press (machine or DB) 3×8 + chest-supported row 3×10 · Superset: Bulgarian split squat 3×6/leg + hamstring curl (machine or sliders) 3×8 · Superset: triceps pushdown 2×12 + face pull 2×15 · §MOB§',
+'Trap-bar deadlift 3×4 @RPE 7–8 · Superset: overhead press 3×5 + pull-up 3×6 · Superset: incline DB press 3×8 + chest-supported row 3×8 · Superset: heavy step-ups 3×6/leg + band swim pulls 3×20 · Triceps pushdown 2×12 · §MOB§',
+'Trap-bar deadlift 2×4 @RPE 7 · Superset: overhead press 2×5 + pull-up 2×5 · Superset: Bulgarian split squat 2×6/leg + chest-supported row 2×8 · §MOB§'];
+const r100=x=>Math.round(x/100)*100,SR=[41,41,44,48,52];
+function swm(w,pi,k,test,t,f){
+ const fo=['high-elbow catch and a long streamline off every wall','hip rotation and a steady 2-beat kick','bilateral breathing 3-5-3 and a relaxed exhale','sighting every 6 strokes and drafting close behind a lane mate'][w%4],
+ out=(x,dist)=>({d:x+' ≈'+dist+' m.'+(f<1?' Recovery/taper week: do about '+Math.round(f*100)+'% of the main set.':''),m:r5(Math.round(dist/SR[pi])*f)}),
+ WU=SHD+' · WU 200 easy + 4×50 drill (catch-up, fingertip drag, 6-3-6)';
+ if(test)return out('WU 400 easy + 4×50 drill. 400 m time trial (all-out but even), 5 min easy, then 200 m time trial. CSS = (T400 − T200) ÷ 2 per 100 m. Enter it in Settings.',1500);
+ if(k==3)return out(SHD+' · WU 200 easy · drills 6×50 · Main: 6×100 easy-steady /20s, 2 of them with a pull buoy · CD 100. Focus: '+fo+'.',1200);
+ if(k==1){
+  if(pi==1&&w<15)return out(WU+' · Main: 6×100 @ CSS+6s /20s · 4×50 pull (buoy) · 4×50 kick (fins ok) · CD 100.',1500);
+  if(pi==1)return out(WU+' · Main: 10×100 @ CSS+3s /15s · 4×50 pull (buoy) · CD 100.',1700);
+  if(pi==2)return out(WU+' · Main: 5×200 @ CSS+2s /20s · 4×50 fast /30s · CD 100.',1700);
+  if(pi==3)return out(WU+' · Main: 3×400 @ CSS+3s /30s · 8×50 fast /20s · CD 100.',2100);
+  const D=r100(L(1200,1900,t));return out(SHD+' · WU 300 easy (incl. drills) · Main: '+D+' m continuous at CSS+4s, steady, sight every 8 strokes · CD 100.',D+400)}
+ const ow=' Open water (summer): every second week swap this for 15–25 min easy open water at a patrolled beach with a buddy and a tow float.';
+ if(pi==1&&w<15)return out(WU+' · Main: 4×150 steady (RPE 5) /20s · 6×25 fast-form /15s · CD 100.'+ow,1250);
+ if(pi==1)return out(WU+' · Main: 3×300 pull-buoy steady /30s · 4×50 build /15s · CD 100.'+ow,1600);
+ if(pi==2){const c=r100(L(600,800,t));return out(WU+' · Main: '+c+' m continuous (RPE 5), then 6×100 @ CSS /15s · CD 100.',400+c+600+100)}
+ if(pi==3)return out('Open water (Oct–Apr, wetsuit, with a buddy and tow float): 25–40 min continuous, sight every 6–8 strokes, 3 deep-water starts. Pool in winter: '+WU+' · Main: 1,000 m continuous steady + 6×100 @ CSS /15s · CD 100.',2100);
+ return out(WU+' · Main: 10×100 @ CSS /10s · 400 pull steady · CD 100. Practise sighting and drafting.',1900)}
 function plan(w){
  const pi=PH.findIndex(x=>w>=x.a&&w<=x.b),P=PH[pi],t=(w-P.a)/(P.b-P.a),tp=w>=65,rec=!tp&&w%4==3,f=tp?[.8,.6,.4][w-65]:rec?.7:1,
  g=k=>r5(L(P[k][0],P[k][1],t)*f),n=(a,b)=>Math.max(1,Math.round(L(a,b,t))-(rec?1:0)),
@@ -105,23 +128,35 @@ function plan(w){
   days[6]=[s('run','Celebrate + easy walk',30,true,'Eat, sleep, review your race notes.')];
  }else{
   days[0].push(s('bike','Easy commute (optional)',180,false,'Both legs Z1–Z2, cadence 85–95. Ride slower than feels natural: base + recovery. If sleep is under 6.5 h or resting HR is +7 bpm, take transit instead.','Leave ≤4:45am'));
-  if(w<66)days[0].push(s('gym','Gym A: lower body + core',rec||tp?35:45,true,GA[[0,1,1,2,3][pi]]+(tp?'. Light: 2 sets, RPE 6.':rec?'. Recovery week: 1 set fewer per lift.':'. Add 2.5 kg only if every rep is ≤ RPE 8.'),'Evening'));
-  const TU=r5(L([45,55,60,60,60][pi],[55,70,80,65,60][pi],t)*f),q=tp?'10 min easy, 3×3 min at 80–85% FTP / 3 min easy, 5 min easy.':[
-   `10 min easy, ${n(3,4)}×8 min tempo at 76–87% FTP (Z3 until you know your FTP) / 3 min easy at 100 rpm, 5 min cool-down.`,
-   `10 min easy, ${n(3,4)}×10 min sweet spot at 88–94% FTP (RPE 7) / 4 min easy, 5 min cool-down.`,
-   `10 min easy, ${n(3,4)}×12 min sweet spot at 88–94% FTP / 4 min easy, 5 min cool-down.`,
-   '10 min easy, 2×20 min at 88–94% FTP / 6 min easy, last 5 min of each rep in the aero position, 5 min cool-down.',
-   '10 min easy, 2×20 min at 75–85% FTP (70.3 effort) in the aero position / 6 min easy, 5 min cool-down.'][pi];
+  if(w<66)days[0].push(s('gym','Gym A · full body · '+GT[pi],tp?30:rec?35:GD[pi][0],true,GA[[0,1,1,2,3][pi]].replace('§MOB§',MOB)+' '+GR[pi]+(tp?' Light: 2 sets, RPE 6.':rec?' Recovery week: 1 set fewer per lift.':''),'Morning or evening'));
+  if(sw){const x=swm(w,pi,3,0,t,f);days[0].push(s('swim','Swim 3: technique',x.m,true,x.d,'After work (pool)'))}else{const FB=r5(L(40,50,t)*f);days[0].push(s('bike','Indoor easy spin (KICKR)',FB,true,`Easy spin ${FB} min at 56–75% FTP (Z2): 5×1 min at 100+ rpm, 5×1 min at 70 rpm seated. Finish fresher than you started.`,'Evening, at home'))}
+  const TR=r5(L([30,35,40,40,35][pi],35,t)*f),iv=(wu,r,wk,rs,cd)=>wu+r*wk+(r-1)*rs+cd,rr=rec?1:2;
   days[1].push(s('bike','Easy commute (optional)',180,false,'Both legs Z1–Z2, cadence 85–95. Easy only: no efforts on the road. Take transit if sleep is under 6.5 h or resting HR is +7 bpm.','Leave ≤4:45am'));
-  days[1].push(s('bike','Indoor bike: quality (KICKR)',TU,true,q+' Fan on, drink 500 ml/h. ERG mode, or hold the power by hand.','Evening, at home'));
-  const nR=n(3,5),rk=T.r5?'WU 15 min Z2 + 4 strides. 5 km time trial on a flat measured route, as even as possible (log time + average HR). CD 10 min. Record it under Goals.':tp?`Z2 for ${RK} min with 4×1 min at goal race pace (relaxed). Stay fresh.`:[
-   w>=3?`10 min Z1, Z2 to ${RK} min total, then 6×45 s hill reps (hard, smooth, jog down). Lorang order: speed/technique first, strength next, economy last.`:`Z2 for ${RK} min, then 6×20 s relaxed strides with full recovery. Conversational pace; walk breaks are fine.`,
-   `10 min Z2, ${nR}×6 min Z3–Z4 (RPE 6–7, short sentences only) / 2 min jog, 10 min CD. Norwegian-style sub-threshold: controlled, finish able to do 2 more reps.`,
-   `10 min Z2, ${nR}×8 min low Z4 / 2 min jog, 10 min CD, then 6×30 s hill strides (Plews: short HIT builds power cheaply).`,
-   `10 min Z2, ${n(2,3)}×12 min at half-marathon effort (Z3–Z4) / 3 min jog, 10 min CD.`,
-   w%2?'10 min Z2, 6×(800 m just above threshold Z4–Z5, then 300 m at goal 70.3 pace), 10 min CD. Plews race-pace session.':'10 min Z2, 3×10 min at goal 70.3 run pace (≈4:30–4:40/km) / 3 min jog, 10 min CD.'][pi];
-  days[2].push(s('run',T.r5?'5 km time trial':'Run key session',RK,true,rk));
-  if(sw)days[2].push(s('swim',T.css?'CSS swim test':'Swim 1: technique + CSS',SS,true,swm(w,pi,1,SS,T.css),'After work (pool)'));
+  days[1].push(s('run','Easy run (before work)',TR,true,`Easy run ${TR} min at Z2 on flat ground, then 4×20 s relaxed strides. Conversational pace: walk if HR rises above Z2. If mornings do not work, do it after work.`,'Before work, or evening'));
+  let bm,bt;const r3=n(3,4),wk=Math.round(L(10,14,t));
+  if(tp){bm=30;bt='10 min easy, 3×3 min at 80–85% FTP / 3 min easy, 5 min easy.'}
+  else if(pi==0){bm=iv(10,r3,8,3,5);bt=`10 min easy, ${r3}×8 min tempo at 76–87% FTP (Z3 until you know your FTP) / 3 min easy at 100 rpm, 5 min cool-down.`}
+  else if(pi==1){bm=iv(10,r3,10,4,5);bt=`10 min easy, ${r3}×10 min sweet spot at 88–94% FTP (RPE 7) / 4 min easy, 5 min cool-down.`}
+  else if(pi==2&&w%3==0&&!rec){bm=iv(10,5,3,3,5);bt='10 min easy, 5×3 min at 108–118% FTP / 3 min easy (VO2: hard but controlled; stop one rep short if form breaks), 5 min cool-down.'}
+  else if(pi==2){const r=rec?2:3;bm=iv(10,r,wk,4,5);bt=`10 min easy, ${r}×${wk} min sweet spot at 88–94% FTP / 4 min easy, 5 min cool-down.`}
+  else if(pi==3&&w%2==0){bm=10+rr*18+(rr-1)*6+5;bt=`10 min easy, ${rr} set${rr>1?'s':''} of 3×(4 min at 90–92% FTP / 2 min at 102–105% FTP) (over-unders)${rr>1?', 6 min easy between sets':''}, 5 min cool-down.`}
+  else{bm=iv(10,rr,20,6,5);bt=`10 min easy, ${rr}×20 min at ${pi==3?'88–94% FTP, last 5 min of each rep in the aero position':'75–85% FTP (70.3 effort) in the aero position'} / 6 min easy, 5 min cool-down.`}
+  days[1].push(s('bike','Indoor bike: quality (KICKR)',bm,true,bt+' Fan on, drink 500 ml/h. ERG mode, or hold the power by hand.','Evening, at home'));
+  let rm,rt;const r35=n(3,5);
+  if(T.r5){rm=45;rt='WU 15 min Z2 + 4 strides. 5 km time trial on a flat measured route, as even as possible (log time + average HR). CD 10 min. Record it in Progress.'}
+  else if(tp){rm=35;rt='Z2 for 30 min with 4×1 min at goal race pace (relaxed). Stay fresh.'}
+  else if(pi==0&&w<3){rm=r5(L(50,55,t));rt=`Z2 for ${rm} min, then 6×20 s relaxed strides with full recovery. Conversational pace; walk breaks are fine.`}
+  else if(pi==0){const h=n(6,8);rm=10+20+Math.round(h*2.25)+10;rt=`10 min Z1, 20 min Z2, ${h}×45 s hill reps (hard, smooth, jog down 90 s), 10 min Z2 to finish. Lorang order: speed and technique first, strength next, economy last.`}
+  else if(pi==1){rm=iv(10,r35,6,2,10)+3;rt=`10 min Z2, ${r35}×6 min Z3–Z4 (RPE 6–7, short sentences only) / 2 min jog, 10 min CD. Norwegian-style sub-threshold: controlled, finish able to do 2 more reps. Then 4×20 s relaxed strides.`}
+  else if(pi==2&&w%3==0){const r=n(5,8);rm=10+2+Math.round(r*3.5)+10;rt=`10 min Z2, 4×20 s strides, ${r}×400 m at 5 km effort / 90 s jog, 10 min CD. Speed and economy: smooth, not all-out.`}
+  else if(pi==2&&w%3==1){const r=n(6,10);rm=10+15+Math.round(r*2.5)+10;rt=`10 min Z2, 15 min Z2 on rolling ground, ${r}×60 s hill reps at 5 km effort (jog down), 10 min CD. Hill strength.`}
+  else if(pi==2){rm=iv(10,r35,8,2,10)+3;rt=`10 min Z2, ${r35}×8 min low Z4 / 2 min jog, 10 min CD, then 4×20 s relaxed strides. Sub-threshold: finish able to do 2 more reps.`}
+  else if(pi==3&&w%2==0){const r=n(2,3);rm=iv(10,r,12,3,10)+3;rt=`10 min Z2, ${r}×12 min at half-marathon effort (Z3–Z4) / 3 min jog, 10 min CD. Then 4×20 s relaxed strides.`}
+  else if(pi==3){const c=Math.round(L(25,30,t));rm=10+c+10;rt=`10 min Z2, ${c} min continuous tempo at Z3–Z4, 10 min CD.`}
+  else if(w%2){rm=50;rt='10 min Z2, 6×(800 m just above threshold Z4–Z5, then 300 m at goal 70.3 pace), 10 min CD. Plews race-pace session.'}
+  else{rm=iv(10,3,10,3,10);rt='10 min Z2, 3×10 min at goal 70.3 run pace (≈4:30–4:40/km) / 3 min jog, 10 min CD.'}
+  days[2].push(s('run',T.r5?'5 km time trial':'Run key session',rm,true,rt));
+  if(sw){const x=swm(w,pi,1,T.css,t,f);days[2].push(s('swim',T.css?'CSS swim test':'Swim 1: technique + CSS',x.m,true,x.d,'After work (pool)'))}else{const FB=r5(L(30,40,t)*f);days[2].push(s('bike','Indoor easy spin (KICKR)',FB,true,`Easy spin ${FB} min at 56–75% FTP (Z2), cadence 90–100, relaxed. Fan on.`,'Evening, at home'))}
   const IB=Math.min(B2,120),nB=n(6,8),bk=T.bk?'WU 20 min easy with 3×1 min fast pedalling, 5 min easy, then 20 min as hard as you can hold steadily (even power, no sprint start). FTP = 95% of the 20-min average power. Enter it in Settings. Your average HR over the last 15 min is your bike LTHR. CD 10 min.':tp?'Indoor openers: 10 min easy, 3×1 min at 85% FTP / 2 min easy. Fresh legs.':[
    `Z2 steady for ${IB} min at 56–75% FTP, 5×2 min at 100+ rpm, last 10 min at 76–87% FTP.`,
    `10 min easy, ${nB}×3 min at 60–70 rpm seated at 85–95% FTP / 4 min easy (Watson strength-endurance), then Z2 at 56–75% FTP to ${IB} min.`,
@@ -129,25 +164,26 @@ function plan(w){
    `10 min easy, ${n(2,3)}×15 min at 88–94% FTP / 5 min easy, then Z2 at 56–75% FTP to ${IB} min.`,
    `Race rehearsal in the aero position: 10 min easy, 2×30 min at 75–82% FTP (70.3 effort) / 5 min easy; practise 80 g carbs/h and your race drink. Z2 to ${IB} min.`][pi];
   days[3].push(s('bike',T.bk?'FTP test (KICKR)':'Indoor bike key session (KICKR)',IB,true,bk+' Fan on, ERG mode optional.'));
-  if(pi<4&&!tp)days[3].push(s('gym','Gym B: pull, single-leg, shoulders',rec?30:40,true,GB[[0,1,1,2][pi]]+(rec?'. 1 set fewer per lift.':''),'Evening'));
+  if(!tp)days[3].push(s('gym','Gym B · full body · '+GT[pi],rec?30:GD[pi][1],true,GB[[0,1,1,2,3][pi]].replace('§MOB§',MOB)+' '+GR[pi]+(rec?' Recovery week: 1 set fewer per lift.':''),'Evening'));
   days[4].push(s('bike','Easy commute (optional)',180,false,'Z1 spin, no efforts. Pack kit and fuel for tomorrow; in bed before 8:30pm.','Leave ≤4:45am'));
-  if(sw){const FS=Math.max(30,SS-20);days[4].push(s('swim','Swim 3: technique',FS,true,swm(w,pi,3,FS)+' Pack kit and fuel for tomorrow; in bed before 8:30pm.','After work (pool)'))}else{const FB=r5(L(45,60,t)*f);days[4].push(s('bike','Indoor easy spin (KICKR)',FB,true,`Easy spin for ${FB} min at 56–75% FTP (Z2): 5×1 min at 100+ rpm and 5×1 min at 70 rpm seated. Fan on. Finish fresher than you started. Pack kit and fuel for tomorrow; in bed before 8:30pm.`,'Evening, at home'))}
+  const FRm=r5(L(30,30,t)*f);days[4].push(w%2==0?s('run','Short easy run + mobility',FRm,true,`Easy run ${FRm-10} min at Z2 on flat ground, then 4×20 s relaxed strides. Then: ${MOB} Pack kit and fuel for tomorrow; in bed before 8:30pm.`,'After work'):s('bike','Short indoor spin + mobility',FRm,true,`Easy spin ${FRm-10} min at 56–75% FTP (Z2), cadence 90–100, 5×1 min at 100+ rpm. Then: ${MOB} Pack kit and fuel for tomorrow; in bed before 8:30pm.`,'Evening, at home'));
+  
   const lr=[
    `${LR} min Z2 on a rolling route, 40–60 g carb/h. Last 15 min Z3 if fresh.`,
    `${LR} min Z2, 50–70 g carb/h, last 30 min Z3 (tempo).`,
    `${LR} min Z2 with 3×15 min Z3 on rolling terrain / 5 min easy; 60–80 g carb/h.`,
-   `${LR} min: 2×30 min at race effort (HR ≤ 88% LTHR) / 10 min Z2, rest Z2; 70–90 g carb/h.`,
-   `${LR} min: 3×20 min at 70.3 effort / 10 min Z2, in aero position; 80–90 g carb/h with the exact race products.`][pi],
+   `${LR} min: 2×30 min at race effort (HR ≤ 88% LTHR) / 10 min Z2, rest Z2; 70–90 g carb/h. Choose a hilly route (Taupō is rolling/hilly).`,
+   `${LR} min: 3×20 min at 70.3 effort / 10 min Z2, in aero position; 80–90 g carb/h with the exact race products. Choose a hilly route.`][pi],
    brk=BR?` Then straight off the bike: ${BR} min run, first half Z2, second half at goal 70.3 run effort (Z3), cadence 170+ (Watson: specificity).`:'';
-  days[5].push(s('bike',BR?'Long ride (outdoor) + brick run':'Long ride (outdoor)',LR+BR,true,lr+brk));
+  days[5].push(s('bike',BR?'Long ride (outdoor) + brick run':'Long ride (outdoor)',LR+BR,true,lr+brk+' '+AFT));
   const lu=[
    `${LU} min Z2; walk 1 min every 15 min if HR drifts above Z2. Fuel 30–40 g carb/h if over 75 min.`,
    `${LU} min Z2, last 10 min steady (Z3). Fuel 30–40 g carb/h.`,
    `${LU} min on rolling/hilly terrain: first 70% Z2, last 30% Z3 (Lorang: strength before speed).`,
    `${LU} min Z2 with 3×10 min at half-marathon effort in the second half.`,
    `${LU} min Z2 with the last 20 min at goal 70.3 run pace (cap 105 min: durability, not heroics).`][pi];
-  days[6].push(s('run','Long run',LU,true,lu));
-  if(sw)days[6].push(s('swim','Swim 2: endurance / open water',Math.max(30,SS-10),true,swm(w,pi,2,Math.max(30,SS-10)),'Mid-morning (pool open)'));
+  days[6].push(s('run','Long run',LU,true,lu+' '+AFT));
+  if(sw){const x=swm(w,pi,2,0,t,f);days[6].push(s('swim','Swim 2: endurance / open water',x.m,true,x.d,'Mid-morning (pool open)'))}else{days[6].push(s('gym','Core + mobility',r5(25*Math.max(f,.8)),true,'Core (10 min, easy and controlled): plank 3×40 s · side plank 3×30 s/side · dead bug 3×10/side · glute bridge 3×15 · calf raise 3×15. '+MOB,'Late morning or evening'))}
   if(rc){const d=(pd(rc[0]).getDay()+6)%7,mm={Sprint:75,Olympic:140,'Du sprint':75,HM:110,'70.3-distance':300}[rc[2]]||120;
    days[d]=[s('race',rc[1]+' ('+rc[2]+')',mm,true,RT[rc[2]]||'')];
    if(d==5)days[6]=[s('run','Recovery jog or walk',30,true,'Z1 only. Eat well, sleep, refuel.')];
@@ -208,7 +244,7 @@ const auto=()=>{const c=KS();if(window.claude||!c.i||!c.k||Date.now()-LS<9e5)ret
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)auto()});
 const FC={ok:'#16a34a',warn:'#d97706',bad:'#dc2626',info:'#667085'},DN=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
 function fbDay(w,i){const out=[],a=ST.ac[iso(dd(w,i))];if(!a)return out;const used={};
- pl(w).days[i].forEach(s=>{if(s.del)return;let b=-1,bd=1e9;a.forEach((x,q)=>{if(used[q]||x.k!=s.k)return;const df=Math.abs(x.m-s.m);if(df<bd){bd=df;b=q}});if(b<0)return;used[b]=1;const x=a[b],cm=/commute/i.test(s.t),ez=/Easy commute|Long ride|Long run|Recovery|Shakeout/.test(s.t);
+ pl(w).days[i].forEach(s=>{if(s.del)return;let b=-1,bd=1e9;a.forEach((x,q)=>{if(used[q]||x.k!=s.k)return;const df=Math.abs(x.m-s.m);if(df<bd){bd=df;b=q}});if(b<0)return;used[b]=1;const x=a[b],cm=/commute/i.test(s.t),ez=/Easy commute|Easy run|Easy spin|Long ride|Long run|Recovery|Shakeout/.test(s.t);
   if(ez&&x.h&&(x.k=='run'||x.k=='bike')){const lt=x.k=='run'?ST.z.rl:ST.z.bl,cap=Math.round(lt*(/Long/.test(s.t)?.92:.89));out.push(x.h>cap?['bad',s.t+' averaged '+x.h+' bpm against an easy limit of '+cap+'. That is not easy. Slow down.']:['ok',s.t+' stayed easy ('+x.h+' vs limit '+cap+').'])}
   if(!cm&&s.m>0){if(x.m<s.m*.7)out.push(['warn',s.t+': '+x.m+' of '+s.m+' min. Short. Do the full time next time.']);else if(ez&&x.m>s.m*1.3)out.push(['warn',s.t+': '+x.m+' min vs '+s.m+' planned. Easy sessions do not grow. Stick to the plan.'])}});
  return out}
@@ -216,7 +252,7 @@ const sh=(t,n)=>{if(t.length<=n)return t;const c=t.slice(0,n),i=c.lastIndexOf(' 
 function coach(w){const p=pl(w),td=new Date(),tk=iso(new Date(td.getFullYear(),td.getMonth(),td.getDate()));
  if(tk<iso(dd(0)))return{lv:'info',h:'Plan starts Monday '+fd(dd(0))+'.',l:['Week 1 is '+p.h.toFixed(1)+' h. Do not add extra sessions. Before Monday: enter your numbers in Settings. The FTP test is on the Thursday of week 4. Until then run the KICKR sessions on RPE.']};
  let pp=0,dn=0,nx=null;const ms=[],ls=[];
- p.days.forEach((ss,i)=>ss.forEach((s,j)=>{if(!s.c||s.del)return;const d=iso(dd(w,i)),ok=ST.done[w+'-'+i+'-'+j];if(d<tk){pp+=s.m;if(ok)dn+=s.m;else if(/key session|Long|Swim|test|time trial/i.test(s.t))ms.push(DN[i]+' '+s.t)}else if(!ok&&!nx)nx={i,s}}));
+ p.days.forEach((ss,i)=>ss.forEach((s,j)=>{if(!s.c||s.del)return;const d=iso(dd(w,i)),ok=ST.done[w+'-'+i+'-'+j];if(d<tk){pp+=s.m;if(ok)dn+=s.m;else if(/key session|quality|Long|Swim|test|time trial/i.test(s.t))ms.push(DN[i]+' '+s.t)}else if(!ok&&!nx)nx={i,s}}));
  const r=pp?dn/pp:1,lv=!pp?'info':r>=.85?'ok':r>=.6?'warn':'bad',h=!pp?'Week '+(w+1)+' is live.':r>=.85?'On track.':r>=.6?'Slipping.':'Off track.';
  if(pp)ls.push('Done '+(dn/60).toFixed(1)+' of '+(pp/60).toFixed(1)+' h due so far ('+Math.round(100*r)+'%).'+(r<.85?' Do not make it up. Stick to the plan from here.':''));
  if(ms.length)ls.push('Missed: '+ms.slice(0,3).join('; ')+'. Skip '+(ms.length>1?'them':'it')+'. Never stack '+(ms.length>1?'them':'it')+' onto another day.');
@@ -255,8 +291,10 @@ function tdView(){const w=curW(),td=new Date(),pre=iso(td)<iso(dd(0)),day=pre?0:
 function wkView(w){const p=pl(w),P=PH[p.pi],ti=(new Date().getDay()+6)%7,isC=w==curW();
  let o=`<div class="wn"><button class="ic" onclick="cw=Math.max(0,cw-1);draw()">‹</button><div style="text-align:center"><b>Week ${w+1}</b><div class="mu">${fd(dd(w))} – ${fd(dd(w,6))}</div></div><button class="ic" onclick="cw=Math.min(N-1,cw+1);draw()">›</button></div>
  <div class="card"><div class="row"><span><b style="color:${P.c}">${w>=65?'Taper & race':P.n}</b>${p.rec?'<span class="pill">recovery</span>':''}</span><span class="mu">${p.h.toFixed(1)} h planned</span></div><div class="bar"><i id="pb" style="width:${prog(w)}%"></i></div>${w==curW()?'':`<p style="margin:10px 0 0"><button onclick="cw=curW();draw()">Back to this week</button></p>`}</div>`;
- p.days.forEach((ss,i)=>{o+=`<section class="day${isC&&i==ti?' today':''}"><h3>${DN[i]} <span class="mu">${fd(dd(w,i))}</span></h3>`;ss.forEach((x,j)=>{if(!x.del)o+=row(w,i,j,x)});o+=actL(w,i)+`<details class="add"><summary>+ Add session</summary>${addF(w,i)}</details></section>`});
+ p.days.forEach((ss,i)=>{o+=`<section class="day${isC&&i==ti?' today':''}"><h3>${DN[i]} <span class="mu">${fd(dd(w,i))}</span>${ss.some(x=>!x.del&&x.c)?'':'<span class="pill">rest day</span>'}</h3>`;ss.forEach((x,j)=>{if(!x.del)o+=row(w,i,j,x)});o+=actL(w,i)+`<details class="add"><summary>+ Add session</summary>${addF(w,i)}</details></section>`});
  return o}
+const fuelCard=()=>{const e=[...ST.wt].sort((a,b)=>a.d<b.d?-1:1),kg=e.length?e[e.length-1].k:W0(),g=(a,b)=>kg?Math.round(kg*a)+'–'+Math.round(kg*b)+' g':a+'–'+b+' g/kg';
+ return `<div class="card"><b>Fuel for lean and strong</b><p>Protein: ${g(1.8,2.2)} a day, 30–40 g within 2 h of training. Carbs: rest and easy days ${g(3,4)}, normal training days ${g(5,6)}, long ride or run days ${g(6,8)}. Deficit: about 300 kcal a day, taken from evenings and rest days, never around key sessions. Fluids: 500–750 ml/h in training; add salt on rides over 90 min. Sleep 7.5–9 h.${kg?'':' Enter your weight in Settings for exact numbers.'}</p><div class="mu">Cut the deficit in test, taper and race weeks, and whenever the Coach says Amber or Red.</div></div>`};
 function pgView(){const segs=PH.map(p=>`<div style="flex:${Math.min(p.b,N-1)-p.a+1};background:${p.c}" title="${p.n}"></div>`).join(''),
  e=[...ST.wt].sort((a,b)=>a.d<b.d?-1:1),w0=W0(),wg=WG(),X=d=>(pd(d)-S0)/(RACE-S0)*820+30,vs=e.map(x=>x.k).concat(w0?[w0]:[],wg?[wg]:[]),lo=vs.length?Math.min(...vs)-1:60,hi=vs.length?Math.max(...vs)+1:90,Y=k=>180-(k-lo)*(160/(hi-lo||1)),tdy=iso(new Date()),nk=CK.find(c=>c[0]>=tdy)||CK[CK.length-1],last=e[e.length-1];
  let tgp='';if(w0&&wg)for(let w=0;w<=N;w++)tgp+=(30+w/N*820)+','+Y(tw(w))+' ';
@@ -266,11 +304,11 @@ function pgView(){const segs=PH.map(p=>`<div style="flex:${Math.min(p.b,N-1)-p.a
  <div class="card"><b>Weight</b>${w0&&wg?`<svg viewBox="0 0 880 200" style="width:100%"><polyline fill="none" stroke="var(--mu)" stroke-dasharray="5" points="${tgp}"/>${e.length>1?`<polyline fill="none" stroke="var(--ac)" stroke-width="2.5" points="${e.map(x=>X(x.d)+','+Y(x.k)).join(' ')}"/>`:''}${e.map(x=>`<circle cx="${X(x.d)}" cy="${Y(x.k)}" r="4" fill="var(--ac)"/>`).join('')}</svg><div class="mu">Dashed = plan (about ${RATE().toFixed(2)} kg/week to ${wg} kg).</div>`:`<p class="mu">Enter your current and goal weight in Settings to see the plan line.</p>`}
  <p>${last?`Latest <b>${last.k} kg</b> (${last.d})${wg?` · ${Math.max(0,last.k-wg).toFixed(1)} kg to goal`:''}`:'No entries yet.'}</p>
  <div style="display:flex;gap:6px;flex-wrap:wrap"><input type="date" id="wd" value="${iso(new Date())}"><input type="number" step="0.1" id="wk" placeholder="kg" style="width:90px"><button class="btn" onclick="const k=parseFloat($('#wk').value),d=$('#wd').value;if(k&&d){ST.wt=ST.wt.filter(x=>x.d!=d).concat({d,k});sv();draw()}">Add</button><button onclick="ST.wt.pop();sv();draw()">Undo</button></div><div class="mu" style="margin-top:6px">Weigh weekly, same morning. Judge the 3-week trend.</div></div>
- <div class="card"><b>Races</b> <span class="mu">A goal · B rehearsal · C train through. Verify dates at <a href="https://triathlon.kiwi/events-calendar" target="_blank" rel="noopener">triathlon.kiwi</a>.</span>${RCe().map((r,i)=>[r,i]).filter(a=>a[0][3]!='O'&&a[0][0]>=tdy).map(a=>{const r=a[0],i=a[1];return `<div class="row"><span>${i==8?fy(pd(r[0])):`<input type="date" value="${r[0]}" onchange="ST.rd[${i}]=this.value;PL.length=0;sv();draw()">`}<br><span class="mu">${E(sh(r[1],54))} · ${r[2]}</span></span><span class="pill">${r[3]}</span></div>`}).join('')}</div>`}
+ ${fuelCard()}<div class="card"><b>Races</b> <span class="mu">A goal · B rehearsal · C train through. Verify dates at <a href="https://triathlon.kiwi/events-calendar" target="_blank" rel="noopener">triathlon.kiwi</a>.</span>${RCe().map((r,i)=>[r,i]).filter(a=>a[0][3]!='O'&&a[0][0]>=tdy).map(a=>{const r=a[0],i=a[1];return `<div class="row"><span>${i==8?fy(pd(r[0])):`<input type="date" value="${r[0]}" onchange="ST.rd[${i}]=this.value;PL.length=0;sv();draw()">`}<br><span class="mu">${E(sh(r[1],54))} · ${r[2]}</span></span><span class="pill">${r[3]}</span></div>`}).join('')}</div>`}
 function stView(){const z=ST.z,f=(l,id,v,ph)=>`<label class="fld"><span class="mu">${l}</span><input type="number" step="any" value="${v||''}" placeholder="${ph||''}" onchange="ST.z.${id}=+this.value;PL.length=0;sv();draw()"></label>`;
  return `<details class="card" open><summary>Training numbers</summary><div class="g2" style="margin-top:12px">${f('Run LTHR (bpm)','rl',z.rl)}${f('Bike LTHR (bpm)','bl',z.bl)}${f('Bike FTP (W)','ftp',z.ftp,'after test')}<label class="fld"><span class="mu">Swim CSS (m:ss per 100 m)</span><input value="${pc(z.css)}" onchange="const m=this.value.split(':');ST.z.css=m.length>1?+m[0]*60+ +m[1]:+m[0];sv();draw()"></label>${f('Current weight (kg)','w0',z.w0)}${f('Goal weight (kg)','wg',z.wg)}</div><p><label><input type="checkbox" ${z.cm?'checked':''} onchange="ST.z.cm=this.checked?1:0;PL.length=0;sv();draw()"> I ride to work (adds optional easy commute rides)</label></p><p class="mu">LTHR: 30 min hard and even; use the average of the last 20 min (bike is usually 5–8 bpm lower). FTP: 95% of a 20-min all-out indoor effort (test in week 4). CSS: (400 m time − 200 m time) ÷ 2 per 100 m. Defaults are guesses until you test.</p></details>
  ${window.claude?'<div class="card mu">This page saves to your claude.ai account. Garmin sync and file backup work in the downloaded app.</div>':`<details class="card"><summary>Garmin sync</summary>${syncCard()}</details><details class="card"><summary>Backup</summary>${bkView0()}</details>`}
- <details class="card"><summary>Rules</summary><p><b>Green</b>: sleep 7 h+, resting HR within 3 bpm of normal: train as written. <b>Amber</b>: sleep 6–7 h or resting HR +4–6: intervals become easy, drop 1 rep. <b>Red</b>: under 6 h, resting HR +7, illness or pain: rest, and never stack the missed session. Never run two hard days in a row. No weight-loss deficit in taper or race week.</p></details>`}
+ ${mobCard()}<details class="card"><summary>Rules</summary><p><b>Green</b>: sleep 7 h+, resting HR within 3 bpm of normal: train as written. <b>Amber</b>: sleep 6–7 h or resting HR +4–6: intervals become easy, drop 1 rep. <b>Red</b>: under 6 h, resting HR +7, illness or pain: rest, and never stack the missed session. Never add extra hard sessions. Friday is a short easy session: keep it easy. Do the 10-minute mobility routine after every gym session and in the Friday session. If resting HR stays +4 bpm for two weeks, take an extra rest day. No weight-loss deficit in taper or race week.</p></details>`}
 const TABS=[['🏠','Today',tdView],['📅','Week',wkView],['📈','Progress',pgView],['⚙️','Settings',stView]];let tab=0,cw=curW();
 (async()=>{try{const c=window.claude;if(!c||!c.use){sst('Auto-saves on this device');return}
 const[db,us]=await Promise.all([c.use('db'),c.use('user')]),id=us&&await us.id();
@@ -283,7 +321,7 @@ document.addEventListener('visibilitychange',()=>{if(document.hidden&&dirty)flus
 }catch(e){sst('Saved on this device only')}})();
 function draw(){$('#nv').innerHTML=TABS.map((t,i)=>`<button class="${i==tab?'on':''}" onclick="tab=${i};draw();scrollTo(0,0)"><span>${t[0]}</span>${t[1]}</button>`).join('');
  const td=new Date(),w=curW();$('#t1').textContent=td.toLocaleDateString('en-NZ',{weekday:'long',day:'numeric',month:'short'});
- $('#t2').textContent='Week '+(w+1)+' of '+N+' · '+(w>=65?'Taper & race':PH[pl(w).pi].n)+' · '+Math.max(0,Math.ceil((RACE-td)/864e5))+' days to Taupō · v9';
+ $('#t2').textContent='Week '+(w+1)+' of '+N+' · '+(w>=65?'Taper & race':PH[pl(w).pi].n)+' · '+Math.max(0,Math.ceil((RACE-td)/864e5))+' days to Taupō · v14';
  $('#v').innerHTML=TABS[tab][2](cw)}
 draw();auto();
 </script><script>if('serviceWorker' in navigator&&location.protocol.indexOf('http')==0&&!window.claude)navigator.serviceWorker.register('sw.js').catch(function(){});try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}</script></body></html>
